@@ -9,7 +9,7 @@
         <a href="/home">帳款查詢</a>
         <a href="/home">轉點錢包</a>
         <a href="/home">統計數據</a>
-        <a href="/home">遊戲管理</a>
+        <a href="/gameManagement">遊戲管理</a>
         <a href="/home">配置</a>
     </ul>
 </div>
