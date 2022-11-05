@@ -127,6 +127,16 @@ main {
   color: #333;
   margin-bottom: 3px;
 }
+#gameManagement > .ivu-body > .left > div p.loading {
+  width: 148px;
+  text-align: center;
+  line-height: 32px;
+  height: 32px;
+  background-color: #29BAFF;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 12px;
+}
 #gameManagement > .ivu-body > .left > div select {
   background-color: #29BAFF;
   color: #fff;
@@ -154,4 +164,46 @@ main {
   outline: 0;
   font-size: 12px;
   margin: 0 10px;
+}
+#gameManagement > .ivu-body > .right > button.open {
+  background-color: #2ABAFF;
+  color: #fff;
+  cursor: pointer;
+}
+#gameManagement > .content {
+  width: 100%;
+}
+#gameManagement > .content > .gameName {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  width: 95%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+#gameManagement > .content > .gameName h2 {
+  width: 350px;
+  height: 45px;
+  border-radius: 50px;
+  border: 3px #29baff solid;
+  text-align: center;
+  line-height: 39px;
+  font-weight: 500;
+  color: #222;
+  font-size: 22px;
+}
+#gameManagement > .content .tableBox {
+  width: 95%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+#gameManagement > .content .tableBox table {
+  width: 100%;
+}
+#gameManagement > .content .tableBox table td {
+  text-align: center;
+}
+#gameManagement > .content .tableBox table .table-title {
+  width: 15%;
 }
