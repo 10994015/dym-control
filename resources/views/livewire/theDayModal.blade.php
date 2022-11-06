@@ -25,14 +25,19 @@
                 <div class="tbody">
                     @foreach($drawResults as $drawResult)
                         <div class="tr">
-                            <div class="td"> <p>{{$drawResult->bet_time}} </p> </div>
+                            <div class="td"> <p>{{$drawResult->bet_time}}:00 </p> </div>
                             <div class="td"> <p> {{$drawResult->number}} </p></div>
                             <div class="td"> <p>{{$drawResult->ranking}} </p> </div>
-                            <div class="td"><button disable>無效</button></div>
+                            <div class="td">
+                                @if(date('Y-m-d H:i')>=$drawResult->bet_time)
+                                <button disable>無效</button>
+                                @else
+                                <button class="ok" wire:click="openChangeResult" >更改結果</button>
+                                @endif
+                            </div>
                         </div>
                     @endforeach
                 </div>
             </div>
-           
         </div>
     </div>

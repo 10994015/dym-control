@@ -172,6 +172,7 @@ main {
 }
 #gameManagement > .content {
   width: 100%;
+  display: block;
 }
 #gameManagement > .content > .gameName {
   display: flex;
@@ -399,4 +400,146 @@ main {
   color: #fff;
   background-color: #2D8CF0;
   cursor: pointer;
+}
+#gameManagement .changeResult {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  animation: openMoadl 0.3s linear;
+  display: none;
+}
+@keyframes openMoadl {
+  0% {
+    opacity: 0;
+  }
+}
+#gameManagement .changeResult > .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+}
+#gameManagement .changeResult > .content {
+  width: 1000px;
+  height: 500px;
+  background-color: #70797E;
+  padding: 20px;
+  border-radius: 6px;
+  z-index: 1000;
+  color: #fff;
+  position: relative;
+}
+#gameManagement .changeResult > .content > #closeChangeResult {
+  position: absolute;
+  top: 11px;
+  right: 15px;
+  display: block;
+  width: 25px;
+  height: 25px;
+  border: 1px #fff solid;
+  text-align: center;
+  line-height: 22px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+#gameManagement .changeResult > .content > #closeChangeResult:hover {
+  color: #ccc;
+}
+#gameManagement .changeResult > .content > h4 {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+#gameManagement .changeResult > .content input {
+  color: #000;
+}
+#gameManagement .changeResult > .content > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+#gameManagement .changeResult > .content > div.timeleft {
+  width: 140px;
+  height: 75px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #000;
+  background-color: #fff;
+  margin: 0 auto 15px;
+}
+#gameManagement .changeResult > .content > div.timeleft > p {
+  font-size: 14px;
+}
+#gameManagement .changeResult > .content > div.newBet {
+  width: 280px;
+  height: 75px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #000;
+  background-color: #fff;
+  float: right;
+}
+#gameManagement .changeResult > .content > div.newBet > p {
+  font-size: 15px;
+  font-weight: 700;
+}
+#gameManagement .changeResult > .content > div.btnList {
+  float: right;
+}
+#gameManagement .changeResult > .content > div.btnList button {
+  width: 56px;
+  height: 31px;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-left: 12px;
+}
+#gameManagement .changeResult > .content > div.btnList .cancel {
+  background-color: #fff;
+  color: #111;
+}
+#gameManagement .changeResult > .content > div.btnList .submit {
+  background-color: #2ABAFF;
+  color: #fff;
+}
+#gameManagement .changeResult > .content > div > p {
+  margin-right: 10px;
+  font-size: 13px;
+}
+#gameManagement .changeResult > .content > div input[type=number] {
+  width: 125px;
+  height: 32px;
+  border-radius: 6px;
+  font-size: 13px;
+  cursor: not-allowed;
+}
+#gameManagement .changeResult > .content > div input[type=number].change {
+  width: 60px;
+  cursor: default;
+}
+#gameManagement .changeResult > .content > div span {
+  margin: 0 4px;
+}
+#gameManagement .changeResult > .content > div .reCalcBtn {
+  background-color: #2d8cf0;
+  color: #fff;
+  width: 80px;
+  height: 31px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
 }

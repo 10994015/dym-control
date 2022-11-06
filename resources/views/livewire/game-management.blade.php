@@ -27,8 +27,9 @@
             <button class="unlock">解鎖編輯</button>
         </div>
     </div>
-    <div class="content">
-        <div class="gameName"><h2>60秒飛機競速</h2></div>
+    @if(!empty($info))
+    <div class="content" id="pageContent" >
+        <div class="gameName"><h2>{{$info->game_name}}</h2></div>
         <div class="tableBox">
             <table class="table table-bordered">
                 <tr>
@@ -54,6 +55,14 @@
             </table>
         </div>
     </div>
+    <script>
+        const viewDrawBtn = document.getElementById('viewDrawBtn');
 
+        viewDrawBtn.addEventListener('click', ()=>{
+            theDayAnswerModal.style.display = "flex";
+        });
+    </script>
+    @endif
     @include('/livewire/theDayModal')
+    @include('livewire/changeResult')
 </div>

@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Answer;
 use App\Models\Game;
+use App\Models\GameInfos;
 use App\Models\Gametype;
 use Illuminate\Support\Facades\Log;
 use Livewire\Component;
@@ -15,6 +16,9 @@ class GameManagement extends Component
     public $selectGameType;
     public $selectGame;
     public $drawResults = [];
+    public $info = [];
+    //飛機:23
+    public $gameNumber = -1;
     public function mount(){
         $this->gameTypes = Gametype::all();
     }
@@ -32,14 +36,21 @@ class GameManagement extends Component
         }
     }
     public function searchFn(){
-        $this->dispatchBrowserEvent('searched', ['game'=>'1']);
+        $this->gameNumber = -1;
+        if($this->selectGameType == 2 && $this->selectGame == 3){
+            $this->gameNumber = 23;
+        }
+        $this->info = GameInfos::where('gamenumber', $this->gameNumber)->first();
+        Log::info($this->info);
+        $this->dispatchBrowserEvent('searched', ['game'=>'23']);
     }
     public function viewDraw(){
-        if($this->selectGameType == 2 && $this->selectGame == 3){
+        if($this->gameNumber == 23){
             $this->drawResults = Answer::where('bet_time', 'LIKE', date('Y-m-d H').'%')->get();
-            date('Y-m-d');
-            Log::info(date('Y-m-d H'));
         }
+    }
+    public function openChangeResult(){
+        $this->dispatchBrowserEvent('openChangeResultModal');
     }
     public function render()
     {

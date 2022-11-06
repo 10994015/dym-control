@@ -169,6 +169,7 @@ main{
     }
     >.content{
         width:100%;
+        display: block;
         >.gameName{
             display: flex;
             justify-content: flex-start;
@@ -423,6 +424,149 @@ main{
                     }
                 }
             }
+        }
+    }
+    .changeResult{
+        width:100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left:0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: .3s;
+        animation: openMoadl .3s linear;
+        display: none;
+        @keyframes  openMoadl {
+            0%{
+                opacity: 0;
+            }
+        }
+        >.back{
+            position: absolute;
+            top: 0;
+            left:0;
+            background-color: rgba(0,0,0,.5);
+            width:100%;
+            height: 100%;
+        }
+        >.content{
+            width:1000px;
+            height: 500px;
+            background-color: #70797E;
+            padding: 20px;
+            border-radius: 6px;
+            z-index: 1000;
+            color:#fff;
+            position: relative;
+            >#closeChangeResult{
+                position: absolute;
+                top: 11px;
+                right:15px;
+                display: block;
+                width:25px;
+                height: 25px;
+                border:1px #fff solid;
+                text-align: center;
+                line-height: 22px;
+                border-radius: 50%;
+                transition: .3s;
+                &:hover{
+                    color:#ccc;
+                }
+            }
+            >h4{
+                text-align: center;
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 30px;
+            }
+            input{
+                color:#000;
+            }
+            >div{
+                display: flex;
+                align-items: center;
+                margin-bottom: 12px;
+                &.timeleft{
+                    width:140px;
+                    height: 75px;
+                    border-radius: 12px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    color:#000;
+                    background-color: #fff;
+                    margin:0 auto 15px;
+                    >p{
+                        font-size: 14px;
+                    }
+                }
+                &.newBet{
+                    width:280px;
+                    height: 75px;
+                    border-radius: 12px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    color:#000;
+                    background-color: #fff;
+                    float: right;
+                    >p{
+                        font-size: 15px;
+                        font-weight: 700;
+                    }
+                }
+                &.btnList{
+                    float: right;
+                    button{
+                        width:56px;
+                        height: 31px;
+                        border-radius: 4px;
+                        font-size: 12px;
+                        margin-left: 12px;
+                    }
+                    .cancel{
+                        background-color: #fff;
+                        color:#111;
+                    }
+                    .submit{
+                        background-color: #2ABAFF;
+                        color:#fff;
+                    }
+                }
+                >p{
+                    margin-right: 10px;
+                    font-size: 13px;
+                }
+                input[type="number"]{
+                    width:125px;
+                    height: 32px;
+                    border-radius: 6px;
+                    font-size: 13px;
+                    cursor: not-allowed;
+                    &.change{
+                        width:60px;
+                        cursor: default;
+                    }
+                }
+                span{
+                    margin:0 4px;
+                }
+                .reCalcBtn{
+                    background-color: #2d8cf0;
+                    color:#fff;
+                    width:80px;
+                    height: 31px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    font-size: 12px;
+                }
+            }
+           
         }
     }
 }
