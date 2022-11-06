@@ -5,6 +5,9 @@ var __webpack_exports__ = {};
   \********************************/
 var sideBarLink = document.getElementsByClassName('sideBarLink');
 var searchBtn = document.getElementById('searchBtn');
+var viewDrawBtn = document.getElementById('viewDrawBtn');
+var theDayAnswerModal = document.getElementById('theDayAnswerModal');
+var closetheDayAnswerModal = document.getElementById('closetheDayAnswerModal');
 if (window.location.pathname.includes('home')) {
   sideBarLink[0].classList.add('focus');
 }
@@ -20,5 +23,12 @@ window.addEventListener('openSearch', function (e) {
     searchBtn.disabled = true;
   }
 });
+viewDrawBtn.addEventListener('click', function () {
+  theDayAnswerModal.style.display = "flex";
+});
+closetheDayAnswerModal.addEventListener('click', function () {
+  theDayAnswerModal.style.display = "none";
+});
+window.addEventListener('searched', function (e) {});
 /******/ })()
 ;

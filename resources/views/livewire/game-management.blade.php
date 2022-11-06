@@ -1,4 +1,4 @@
-<div id="gameManagement" >
+<div id="gameManagement">
     <div class="title">遊戲設定</div>
     <div class="ivu-body">
         <div class="left">
@@ -33,10 +33,27 @@
             <table class="table table-bordered">
                 <tr>
                     <td class="table-title">開彩資訊</td>
-                    <td class="table-content">content.</td>
+                    <td class="table-content ">
+                        <div class="drawInfo">
+                            <div class="left">
+                                <h4>開彩模式</h4>
+                                <select name="" id="">
+                                    <option value="">當日預知</option>
+                                    <option value="">風險控制-當日最大損賠</option>
+                                </select>
+                            </div>
+                            <div class="center">
+                                <button wire:click="viewDraw" id="viewDrawBtn">查看開彩結果</button>
+                            </div>
+                            <div class="right">
+                                <button>模式變更紀錄</button>
+                            </div>
+                        </div>
+                    </td>
                 </tr>
             </table>
         </div>
     </div>
-    
+
+    @include('/livewire/theDayModal')
 </div>
