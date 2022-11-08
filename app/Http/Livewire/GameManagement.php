@@ -67,12 +67,19 @@ class GameManagement extends Component
         // Log::info($this->oriResultArr);
         $this->changeResultNumber = $answer->number;
         $risk_bet = RiskBet::where('bet_number', $this->changeResultNumber)->get();
-        
-        // Log::info($risk_bet);
         $this->betRecord = $risk_bet;
-        Log::info($this->betRecord);
-        $this->max = $risk_bet[0]->result;
-        $this->totalBet = $risk_bet[0]->money;
+        // Log::info( $this->betRecord);
+        // Log::info($risk_bet);
+        if(count($this->betRecord) > 0){
+            Log::info("+++");
+            $this->max = $risk_bet[0]->result;
+            $this->totalBet = $risk_bet[0]->money;
+        }else{
+            Log::info("---");
+            $this->max = 0;
+            $this->totalBet = 0;
+        }
+        
         // Log::info($this->changeResultNumber);
         $this->dispatchBrowserEvent('openChangeResultModal', ['bet_time'=>$answer->bet_time]);
     }
