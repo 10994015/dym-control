@@ -6,6 +6,7 @@ use App\Models\Answer;
 use App\Models\Game;
 use App\Models\GameInfos;
 use App\Models\Gametype;
+use App\Models\RiskBet;
 use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
@@ -19,6 +20,15 @@ class GameManagement extends Component
     public $info = [];
     //飛機:23
     public $gameNumber = -1;
+    public $changeResultArr = [];
+    public $changeResultNumber;
+    public $oriResultArr;
+    public $betRecord = [];
+    public $max;
+    public $totalBet;
+
+    protected $listeners = ['changeSubmit'=>'changeSubmit'];
+
     public function mount(){
         $this->gameTypes = Gametype::all();
     }
@@ -41,7 +51,7 @@ class GameManagement extends Component
             $this->gameNumber = 23;
         }
         $this->info = GameInfos::where('gamenumber', $this->gameNumber)->first();
-        Log::info($this->info);
+        // Log::info($this->info);
         $this->dispatchBrowserEvent('searched', ['game'=>'23']);
     }
     public function viewDraw(){
@@ -49,8 +59,29 @@ class GameManagement extends Component
             $this->drawResults = Answer::where('bet_time', 'LIKE', date('Y-m-d H').'%')->get();
         }
     }
-    public function openChangeResult(){
-        $this->dispatchBrowserEvent('openChangeResultModal');
+    public function openChangeResult($id){
+        $answer = Answer::where('id', $id)->first();
+        
+        $this->changeResultArr = explode(',', $answer->ranking);
+        $this->oriResultArr = str_replace(',', ' - ', $answer->ranking);
+        // Log::info($this->oriResultArr);
+        $this->changeResultNumber = $answer->number;
+        $risk_bet = RiskBet::where('bet_number', $this->changeResultNumber)->get();
+        
+        // Log::info($risk_bet);
+        $this->betRecord = $risk_bet;
+        Log::info($this->betRecord);
+        $this->max = $risk_bet[0]->result;
+        $this->totalBet = $risk_bet[0]->money;
+        // Log::info($this->changeResultNumber);
+        $this->dispatchBrowserEvent('openChangeResultModal', ['bet_time'=>$answer->bet_time]);
+    }
+    public function changeSubmit($arr){
+        $this->changeResultArr = $arr;
+        $answer = Answer::where('number', $this->changeResultNumber)->first();
+        Log::info(implode(",", $this->changeResultArr));
+        $answer->ranking = implode(",", $this->changeResultArr);
+        $answer->save();
     }
     public function render()
     {

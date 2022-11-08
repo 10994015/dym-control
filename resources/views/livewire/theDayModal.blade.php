@@ -1,7 +1,7 @@
 <div class="theDayAnswerModal" id="theDayAnswerModal" wire:ignore.self>
         <div class="back"></div>
         <div class="content">
-            <h5>开彩结果（风险控制-当日最大赔损）</h5>
+            <h5>開彩結果（風險控制-當日最大賠損）</h5>
             <a href="javascript:;" id="closetheDayAnswerModal"> <i class="fas fa-times"></i> </a>
             <div class="searchDiv">
                 <div class="timeSearch">
@@ -27,12 +27,12 @@
                         <div class="tr">
                             <div class="td"> <p>{{$drawResult->bet_time}}:00 </p> </div>
                             <div class="td"> <p> {{$drawResult->number}} </p></div>
-                            <div class="td"> <p>{{$drawResult->ranking}} </p> </div>
+                            <div class="td"> <p>@php echo str_replace(',', '-', $drawResult->ranking) @endphp </p> </div>
                             <div class="td">
                                 @if(date('Y-m-d H:i')>=$drawResult->bet_time)
                                 <button disable>無效</button>
                                 @else
-                                <button class="ok" wire:click="openChangeResult" >更改結果</button>
+                                <button class="ok" wire:click="openChangeResult({{$drawResult->id}})" >更改結果</button>
                                 @endif
                             </div>
                         </div>
