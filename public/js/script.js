@@ -14,6 +14,9 @@ var changeResultSubmit = document.getElementById('changeResultSubmit');
 var minutes = "";
 var seconds = "";
 var x = null;
+var guessAirArray = {};
+var nowAnswer = [];
+var reWinValue = document.getElementById('reWinValue');
 if (window.location.pathname.includes('home')) {
   sideBarLink[0].classList.add('focus');
 }
@@ -42,6 +45,7 @@ window.addEventListener('openChangeResultModal', function (e) {
   minutes = "";
   seconds = "";
   downTime(nowTime);
+  reWinValue.value = 0;
   changeResult.style.display = "flex";
 });
 closeChangeResult.addEventListener('click', function () {
@@ -66,11 +70,32 @@ changeResultSubmit.addEventListener('click', function () {
     return;
   }
   arr = Array.from(result);
-  console.log(arr);
+  // console.log(arr);
+
   window.Livewire.emit('changeSubmit', arr);
   Swal.fire('更新成功', '', 'success');
   clearInterval(x);
 });
+window.addEventListener('recalculate', function (e) {
+  var result = new Set();
+  for (var i = 0; i < changeNumber.length; i++) {
+    if (!result.has(changeNumber[i].value)) {
+      result.add(changeNumber[i].value);
+    }
+    ;
+  }
+  if (result.size < 10) {
+    Swal.fire('警告', '排名請勿重複', 'warning');
+    return;
+  }
+  guessAirArray = JSON.parse(JSON.parse(e.detail.guessArr));
+  nowAnswer = [];
+  nowAnswerFn();
+  // console.log(nowAnswer);
+  reWinValue.value = calcBetFn();
+  // console.log();
+});
+
 function downTime(nowTime) {
   x = setInterval(function () {
     var now = new Date().getTime();
@@ -84,6 +109,29 @@ function downTime(nowTime) {
       clearInterval(x);
     }
   }, 1000);
+}
+function nowAnswerFn() {
+  for (var i = 0; i < changeNumber.length; i++) {
+    nowAnswer.push(changeNumber[i].value);
+  }
+}
+function calcBetFn() {
+  var winMoney = 0;
+  //賠率
+  var odds = 2;
+  for (var i = 1; i <= 10; i++) {
+    // console.log(guessAirArray[`no${i}`]);
+    for (var j = 1; j <= 10; j++) {
+      if (guessAirArray["no".concat(i)]["air".concat(j)]['money'] > 0) {
+        // console.log(guessAirArray[`no${i}`][`air${nowAnswer[i-1]}`]);
+        if (j == nowAnswer[i - 1]) {
+          winMoney = winMoney + guessAirArray["no".concat(i)]["air".concat(j)]['money'] * odds;
+        }
+      }
+    }
+  }
+  return winMoney;
+  // window.Livewire.emit('calcMoney', winMoney);
 }
 /******/ })()
 ;

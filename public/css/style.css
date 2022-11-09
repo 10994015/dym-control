@@ -483,20 +483,33 @@ main {
   font-size: 14px;
 }
 #gameManagement .changeResult > .content > div.newBet {
-  width: 280px;
-  height: 75px;
+  width: 300px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  overflow-y: scroll;
+  max-height: 100px;
   border-radius: 12px;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
   color: #000;
   background-color: #fff;
   float: right;
 }
+#gameManagement .changeResult > .content > div.newBet::-webkit-scrollbar {
+  width: 5px;
+}
+#gameManagement .changeResult > .content > div.newBet::-webkit-scrollbar-track {
+  background-color: #555;
+  border-radius: 10px;
+}
+#gameManagement .changeResult > .content > div.newBet::-webkit-scrollbar-thumb {
+  background-color: ccc;
+}
 #gameManagement .changeResult > .content > div.newBet > p {
   font-size: 15px;
   font-weight: 700;
+  text-align: center;
 }
 #gameManagement .changeResult > .content > div.btnList {
   float: right;
@@ -542,4 +555,37 @@ main {
   border-radius: 4px;
   cursor: pointer;
   font-size: 12px;
+}
+
+#loginPage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("/images/BG_ci.fd83249.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#loginPage .center {
+  widtH: 100%;
+  padding: 50px 0;
+  min-height: 300px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#loginPage .logo {
+  width: 300px;
+  margin: 0 100px;
+}
+#loginPage form {
+  margin: 0 100px;
+  width: 350px;
+}
+#loginPage form > .loginBtn {
+  width: 100%;
+  background-color: #29BAFF;
 }

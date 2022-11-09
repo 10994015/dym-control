@@ -1,4 +1,4 @@
-<div id="gameManagement">
+<div id="gameManagement" >
     <div class="title">遊戲設定</div>
     <div class="ivu-body">
         <div class="left">

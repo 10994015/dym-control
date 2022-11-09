@@ -6,7 +6,7 @@
         <div class="newBet">
             <p>最新一期下注: {{$changeResultNumber}}</p>
             @foreach($betRecord as $item)
-            <a href="javascript:;"></a>{{$item->user->name}}</a>
+            <a href="javascript:;" wire:click="viewUserResult({{$item->id}})">{{$item->user->name}}</a>
             @endforeach
         </div>
         <div class="timeleft">
@@ -32,15 +32,15 @@
             @endforeach
         </div>
         <div>
-            <button class="reCalcBtn">重新計算</button>
+            <button class="reCalcBtn" wire:click="recalculate">重新計算</button>
         </div>
         <div>
             <p>更改後輸贏</p>
-            <input type="number" disabled value="0">
+            <input type="number" id="reWinValue" disabled value="0">
         </div>
         <div class="btnList">
             <button class="cancel" id="cancelChangeResult">取消</button>
-            <button class="submit" id="changeResultSubmit">確定</button>
+            <button class="submit" id="changeResultSubmit" wire:click="changeResultSubmit">確定</button>
         </div>
     </div>
 </div>

@@ -26,6 +26,8 @@ class GameManagement extends Component
     public $betRecord = [];
     public $max;
     public $totalBet;
+    public $guessArr = [];
+    public $focusId;
 
     protected $listeners = ['changeSubmit'=>'changeSubmit'];
 
@@ -66,7 +68,7 @@ class GameManagement extends Component
         $this->oriResultArr = str_replace(',', ' - ', $answer->ranking);
         // Log::info($this->oriResultArr);
         $this->changeResultNumber = $answer->number;
-        $risk_bet = RiskBet::where('bet_number', $this->changeResultNumber)->get();
+        $risk_bet = RiskBet::where('bet_number', $this->changeResultNumber)->orderBy('result', 'DESC')->get();
         $this->betRecord = $risk_bet;
         // Log::info( $this->betRecord);
         // Log::info($risk_bet);
@@ -74,6 +76,7 @@ class GameManagement extends Component
             Log::info("+++");
             $this->max = $risk_bet[0]->result;
             $this->totalBet = $risk_bet[0]->money;
+            $this->focusId = $risk_bet[0]->id;
         }else{
             Log::info("---");
             $this->max = 0;
@@ -83,12 +86,32 @@ class GameManagement extends Component
         // Log::info($this->changeResultNumber);
         $this->dispatchBrowserEvent('openChangeResultModal', ['bet_time'=>$answer->bet_time]);
     }
+    public function recalculate(){
+        $risk_bet = RiskBet::where('id', $this->focusId)->first();
+        $this->guessArr = $risk_bet->guess;
+        // Log::info($this->guessArr);
+        $this->dispatchBrowserEvent('recalculate', ['guessArr'=>json_encode($this->guessArr)]);
+    }
     public function changeSubmit($arr){
         $this->changeResultArr = $arr;
         $answer = Answer::where('number', $this->changeResultNumber)->first();
-        Log::info(implode(",", $this->changeResultArr));
+        // Log::info(implode(",", $this->changeResultArr));
         $answer->ranking = implode(",", $this->changeResultArr);
         $answer->save();
+    }
+    public function viewUserResult($id){
+        Log::info($id);
+        $risk_bet = RiskBet::where('id', $id)->first();
+        $this->max = $risk_bet->result;
+        $this->totalBet = $risk_bet->money;
+        $this->focusId = $risk_bet->id;
+        $this->guessArr = $risk_bet->guess;
+    }
+    public function changeResultSubmit(){
+        $this->max = 0;
+        $this->totalBet = 0;
+        $this->guessArr = [];
+        $this->focusId = -1;
     }
     public function render()
     {
