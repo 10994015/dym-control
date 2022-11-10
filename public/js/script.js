@@ -17,6 +17,10 @@ var x = null;
 var guessAirArray = {};
 var nowAnswer = [];
 var reWinValue = document.getElementById('reWinValue');
+var unlock = document.getElementById('unlock');
+var updatelock = document.getElementById('updatelock');
+var reduction = document.getElementById('reduction');
+// const modeSelect = document.getElementById('modeSelect');
 if (window.location.pathname.includes('home')) {
   sideBarLink[0].classList.add('focus');
 }
@@ -75,6 +79,16 @@ changeResultSubmit.addEventListener('click', function () {
   window.Livewire.emit('changeSubmit', arr);
   Swal.fire('更新成功', '', 'success');
   clearInterval(x);
+});
+unlock.addEventListener('click', function () {
+  updatelock.style.display = "block";
+  reduction.style.display = "block";
+  unlock.disabled = true;
+  unlock.style.display = "none";
+  searchBtn.disabled = true;
+  searchBtn.classList.remove('open');
+  document.getElementById('modeSelect').classList.add('open');
+  document.getElementById('modeSelect').disabled = false;
 });
 window.addEventListener('recalculate', function (e) {
   var result = new Set();

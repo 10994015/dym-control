@@ -12,6 +12,10 @@ let x = null;
 let guessAirArray = {};
 let nowAnswer = [];
 const reWinValue = document.getElementById('reWinValue');
+const unlock = document.getElementById('unlock');
+const updatelock = document.getElementById('updatelock');
+const reduction = document.getElementById('reduction');
+// const modeSelect = document.getElementById('modeSelect');
 if(window.location.pathname.includes('home')){
     sideBarLink[0].classList.add('focus');
 }
@@ -80,7 +84,16 @@ changeResultSubmit.addEventListener('click', ()=>{
     )
     clearInterval(x);
 })
-
+unlock.addEventListener('click', ()=>{
+    updatelock.style.display = "block";
+    reduction.style.display = "block";
+    unlock.disabled = true;
+    unlock.style.display = "none";
+    searchBtn.disabled = true;
+    searchBtn.classList.remove('open')
+    document.getElementById('modeSelect').classList.add('open');
+    document.getElementById('modeSelect').disabled = false;
+})
 window.addEventListener('recalculate', e=>{
     let result = new Set();
     for(let i=0;i<changeNumber.length;i++){

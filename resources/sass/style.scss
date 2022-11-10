@@ -163,6 +163,12 @@ main{
                     background-color: #2ABAFF;
                     color:#fff;
                     cursor: pointer;
+                    &.unlock{
+                        background-color:#4C67A8;
+                    }
+                }
+                &.updatelock, &.reduction{
+                    display: none;
                 }
             }
         }
@@ -224,8 +230,10 @@ main{
                                 text-align: center;
                                 outline: none;
                                 border-radius: 5px;
-                                cursor: pointer;
-
+                                cursor: not-allowed;
+                                &.open{
+                                    cursor: pointer;
+                                }
                             }
                         }
                         >.center{

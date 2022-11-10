@@ -53,8 +53,7 @@ class GameManagement extends Component
             $this->gameNumber = 23;
         }
         $this->info = GameInfos::where('gamenumber', $this->gameNumber)->first();
-        // Log::info($this->info);
-        $this->dispatchBrowserEvent('searched', ['game'=>'23']);
+        // $this->dispatchBrowserEvent('searched', ['game'=>'23']);
     }
     public function viewDraw(){
         if($this->gameNumber == 23){

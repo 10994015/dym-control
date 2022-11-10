@@ -170,6 +170,12 @@ main {
   color: #fff;
   cursor: pointer;
 }
+#gameManagement > .ivu-body > .right > button.open.unlock {
+  background-color: #4C67A8;
+}
+#gameManagement > .ivu-body > .right > button.updatelock, #gameManagement > .ivu-body > .right > button.reduction {
+  display: none;
+}
 #gameManagement > .content {
   width: 100%;
   display: block;
@@ -231,6 +237,9 @@ main {
   text-align: center;
   outline: none;
   border-radius: 5px;
+  cursor: not-allowed;
+}
+#gameManagement > .content .tableBox table td > .drawInfo > .left select.open {
   cursor: pointer;
 }
 #gameManagement > .content .tableBox table td > .drawInfo > .center button {

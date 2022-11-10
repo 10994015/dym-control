@@ -1,4 +1,4 @@
-<div id="gameManagement" >
+<div id="gameManagement" wire:ignore.self>
     <div class="title">遊戲設定</div>
     <div class="ivu-body">
         <div class="left">
@@ -23,8 +23,15 @@
             </div>
         </div>
         <div class="right">
+        @if(!empty($info))
+            <button class="search open" id="searchBtn"  wire:click="searchFn">搜尋</button>
+            <button class="unlock open" id="unlock">解鎖編輯</button>
+        @else
             <button class="search" id="searchBtn" disabled wire:click="searchFn">搜尋</button>
-            <button class="unlock">解鎖編輯</button>
+            <button class="unlock" id="unlock" disabled>解鎖編輯</button>
+        @endif
+            <button class="updatelock open" id="updatelock">更新鎖上</button>
+            <button class="reduction open" id="reduction">還原</button>
         </div>
     </div>
     @if(!empty($info))
@@ -38,7 +45,7 @@
                         <div class="drawInfo">
                             <div class="left">
                                 <h4>開彩模式</h4>
-                                <select name="" id="">
+                                <select name="" id="modeSelect" disabled>
                                     <option value="">當日預知</option>
                                     <option value="">風險控制-當日最大損賠</option>
                                 </select>
