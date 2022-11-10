@@ -62,4 +62,7 @@ class User extends Authenticatable
     public function risk_bets(){
         return $this->hasMany('App\Models\RiskBet'::class);
     }
+    public function operates(){
+        return $this->hasMany('App\Models\Operate'::class);
+    }
 }

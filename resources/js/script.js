@@ -15,7 +15,6 @@ const reWinValue = document.getElementById('reWinValue');
 const unlock = document.getElementById('unlock');
 const updatelock = document.getElementById('updatelock');
 const reduction = document.getElementById('reduction');
-// const modeSelect = document.getElementById('modeSelect');
 if(window.location.pathname.includes('home')){
     sideBarLink[0].classList.add('focus');
 }
@@ -93,6 +92,10 @@ unlock.addEventListener('click', ()=>{
     searchBtn.classList.remove('open')
     document.getElementById('modeSelect').classList.add('open');
     document.getElementById('modeSelect').disabled = false;
+    document.getElementById('viewDrawBtn').disabled = true;
+    document.getElementById('viewDrawBtn').classList.add('lock');
+    document.getElementById('modeRecordBtn').disabled = true;
+    document.getElementById('modeRecordBtn').classList.add('lock');
 })
 window.addEventListener('recalculate', e=>{
     let result = new Set();
@@ -164,4 +167,5 @@ function calcBetFn(){
 
     
 }
+
 

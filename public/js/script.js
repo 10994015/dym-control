@@ -20,7 +20,6 @@ var reWinValue = document.getElementById('reWinValue');
 var unlock = document.getElementById('unlock');
 var updatelock = document.getElementById('updatelock');
 var reduction = document.getElementById('reduction');
-// const modeSelect = document.getElementById('modeSelect');
 if (window.location.pathname.includes('home')) {
   sideBarLink[0].classList.add('focus');
 }
@@ -89,6 +88,10 @@ unlock.addEventListener('click', function () {
   searchBtn.classList.remove('open');
   document.getElementById('modeSelect').classList.add('open');
   document.getElementById('modeSelect').disabled = false;
+  document.getElementById('viewDrawBtn').disabled = true;
+  document.getElementById('viewDrawBtn').classList.add('lock');
+  document.getElementById('modeRecordBtn').disabled = true;
+  document.getElementById('modeRecordBtn').classList.add('lock');
 });
 window.addEventListener('recalculate', function (e) {
   var result = new Set();

@@ -6,7 +6,9 @@ use App\Models\Answer;
 use App\Models\Game;
 use App\Models\GameInfos;
 use App\Models\Gametype;
+use App\Models\Operate;
 use App\Models\RiskBet;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Livewire\Component;
 
@@ -22,12 +24,14 @@ class GameManagement extends Component
     public $gameNumber = -1;
     public $changeResultArr = [];
     public $changeResultNumber;
+    public $gameMode;
     public $oriResultArr;
     public $betRecord = [];
     public $max;
     public $totalBet;
     public $guessArr = [];
     public $focusId;
+    public $operates = [];
 
     protected $listeners = ['changeSubmit'=>'changeSubmit'];
 
@@ -53,7 +57,8 @@ class GameManagement extends Component
             $this->gameNumber = 23;
         }
         $this->info = GameInfos::where('gamenumber', $this->gameNumber)->first();
-        // $this->dispatchBrowserEvent('searched', ['game'=>'23']);
+        $this->gameMode = $this->info->mode;
+        // Log::info($this->gameMode);
     }
     public function viewDraw(){
         if($this->gameNumber == 23){
@@ -99,7 +104,6 @@ class GameManagement extends Component
         $answer->save();
     }
     public function viewUserResult($id){
-        Log::info($id);
         $risk_bet = RiskBet::where('id', $id)->first();
         $this->max = $risk_bet->result;
         $this->totalBet = $risk_bet->money;
@@ -111,6 +115,23 @@ class GameManagement extends Component
         $this->totalBet = 0;
         $this->guessArr = [];
         $this->focusId = -1;
+    }
+    public function updateLock(){
+        $gameInfo =  GameInfos::where('gamenumber', $this->gameNumber)->first();
+
+        $operate = new Operate();
+        $operate->gamenumber = $this->gameNumber;
+        $operate->before = $gameInfo->mode;
+        $operate->after = $this->gameMode;
+        $operate->user_id = Auth::id();
+
+        $gameInfo->mode = $this->gameMode;
+        $gameInfo->save();
+        $operate->save();    
+    }
+    public function modeRecord(){
+        $operates = Operate::where('gameNumber', $this->gameNumber)->orderBy('id', 'DESC')->get();
+        $this->operates = $operates;
     }
     public function render()
     {

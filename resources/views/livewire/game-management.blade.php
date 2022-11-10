@@ -1,4 +1,4 @@
-<div id="gameManagement" wire:ignore.self>
+<div id="gameManagement" >
     <div class="title">遊戲設定</div>
     <div class="ivu-body">
         <div class="left">
@@ -30,7 +30,7 @@
             <button class="search" id="searchBtn" disabled wire:click="searchFn">搜尋</button>
             <button class="unlock" id="unlock" disabled>解鎖編輯</button>
         @endif
-            <button class="updatelock open" id="updatelock">更新鎖上</button>
+            <button class="updatelock open" id="updatelock" wire:click="updateLock">更新鎖上</button>
             <button class="reduction open" id="reduction">還原</button>
         </div>
     </div>
@@ -45,16 +45,16 @@
                         <div class="drawInfo">
                             <div class="left">
                                 <h4>開彩模式</h4>
-                                <select name="" id="modeSelect" disabled>
-                                    <option value="">當日預知</option>
-                                    <option value="">風險控制-當日最大損賠</option>
+                                <select name="" id="modeSelect" disabled wire:model.defer="gameMode">
+                                    <option value="0" selected>當日預知</option>
+                                    <option value="1">風險控制-當日最大損賠</option>
                                 </select>
                             </div>
                             <div class="center">
                                 <button wire:click="viewDraw" id="viewDrawBtn">查看開彩結果</button>
                             </div>
                             <div class="right">
-                                <button>模式變更紀錄</button>
+                                <button wire:click="modeRecord" id="modeRecordBtn">模式變更紀錄</button>
                             </div>
                         </div>
                     </td>
@@ -64,12 +64,20 @@
     </div>
     <script>
         const viewDrawBtn = document.getElementById('viewDrawBtn');
-
+        const modeRecordBtn = document.getElementById('modeRecordBtn');
+        const closeModeRecord = document.getElementById('closeModeRecord');
         viewDrawBtn.addEventListener('click', ()=>{
             theDayAnswerModal.style.display = "flex";
+        });
+        modeRecordBtn.addEventListener('click', ()=>{
+            modeRecord.style.display = "flex";
+        });
+        closeModeRecord.addEventListener('click', ()=>{
+            modeRecord.style.display = "none";
         });
     </script>
     @endif
     @include('/livewire/theDayModal')
     @include('livewire/changeResult')
+    @include('livewire/modeRecord')
 </div>
