@@ -433,6 +433,9 @@ main{
                                 background-color: #2D8CF0;
                                 cursor: pointer;
                             }
+                            &.no{
+                                width:64px;
+                            }
                         }
 
                     }

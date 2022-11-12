@@ -27,12 +27,26 @@
                         <div class="tr">
                             <div class="td"> <p>{{$drawResult->bet_time}}:00 </p> </div>
                             <div class="td"> <p> {{$drawResult->number}} </p></div>
-                            <div class="td"> <p>@php echo str_replace(',', '-', $drawResult->ranking) @endphp </p> </div>
+                            <div class="td"> 
+                                @if($gameMode == 0)
+                                <p>@php echo str_replace(',', '-', $drawResult->ranking) @endphp </p>
+                                @else
+                                    @if(date('Y-m-d H:i')>=$drawResult->bet_time)
+                                        <p>@php echo str_replace(',', '-', $drawResult->ranking) @endphp</p>
+                                    @else
+                                        <p>尚未開彩</p>
+                                    @endif
+                                @endif
+                             </div>
                             <div class="td">
                                 @if(date('Y-m-d H:i')>=$drawResult->bet_time)
                                 <button disable>無效</button>
                                 @else
-                                <button class="ok" wire:click="openChangeResult({{$drawResult->id}})" >更改結果</button>
+                                    @if($gameMode == 0)
+                                        <button class="ok" wire:click="openChangeResult({{$drawResult->id}})" >更改結果</button>
+                                    @else
+                                        <button disabled class="no">更改結果</button>
+                                    @endif
                                 @endif
                             </div>
                         </div>

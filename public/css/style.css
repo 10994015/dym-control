@@ -416,6 +416,9 @@ main {
   background-color: #2D8CF0;
   cursor: pointer;
 }
+#gameManagement .theDayAnswerModal > .content > .table .tr .td button.no {
+  width: 64px;
+}
 #gameManagement .changeResult {
   width: 100%;
   height: 100vh;
