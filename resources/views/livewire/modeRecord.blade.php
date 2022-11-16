@@ -24,7 +24,7 @@ $modeArr = [0=>'當日預測', 1=>'風險控制-當日最大賠損'];
                         <p>{{$modeArr[$item->after]}}</p>
                     </div>
                     <div class="item">
-                        <p>{{$item->user->email}}</p>
+                        <p></p>
                     </div>
                 </div>
                 @endforeach
