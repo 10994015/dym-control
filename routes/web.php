@@ -19,8 +19,10 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', Home::class)->middleware('auth');
-Route::get('/gameManagement', GameManagement::class)->middleware('auth');
+// Route::get('/', Home::class)->middleware('auth');
+// Route::get('/gameManagement', GameManagement::class)->middleware('auth');
+Route::get('/', Home::class);
+Route::get('/gameManagement', GameManagement::class);
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
