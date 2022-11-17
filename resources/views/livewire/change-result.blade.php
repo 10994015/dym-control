@@ -1,4 +1,5 @@
 <div id="changeResult" class="changeResult" wire:ignore.self>
+
     <div class="back"></div>
     <div class="content">
         <a href="javascript:;" id="closeChangeResult"> <i class="fas fa-times"></i> </a>
