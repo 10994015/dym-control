@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', Home::class)->middleware('auth');
+Route::get('/home', Home::class)->middleware('auth');
 Route::get('/gameManagement', GameManagement::class)->middleware('auth');
 
 Route::middleware([
