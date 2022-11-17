@@ -9,7 +9,7 @@
         <a href="/home" class="sideBarLink">帳款查詢</a>
         <a href="/home" class="sideBarLink">轉點錢包</a>
         <a href="/home" class="sideBarLink">統計數據</a>
-        <a href="/gameManagement" class="sideBarLink">遊戲管理</a>
+        <a href="{{url('gameManagement')}}" class="sideBarLink">遊戲管理</a>
         <a href="/home" class="sideBarLink">配置</a>
     </ul>
 </div>
