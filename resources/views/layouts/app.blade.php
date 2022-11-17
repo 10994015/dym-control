@@ -14,8 +14,7 @@
         @livewireStyles
 
         <!-- Scripts -->
-        <link rel="stylesheet" href="/css/app.css">
-        <script src="/js/app.js"></script>
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
         <x-jet-banner />

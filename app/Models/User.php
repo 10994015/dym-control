@@ -9,7 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
-
+use Illuminate\Database\Eloquent\Model;
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -60,9 +60,9 @@ class User extends Authenticatable
     ];
 
     public function risk_bets(){
-        return $this->hasMany('App\Models\RiskBet'::class);
+        return $this->hasMany(RiskBet::class);
     }
     public function operates(){
-        return $this->hasMany('App\Models\Operate'::class);
+        return $this->hasMany(Operate::class);
     }
 }

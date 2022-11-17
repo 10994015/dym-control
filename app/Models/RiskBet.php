@@ -11,6 +11,6 @@ class RiskBet extends Model
     protected $table = "risk_bets";
     public function user()
     {
-        return $this->belongsTo('App\Models\User'::class);
+        return $this->belongsTo(User::class);
     }
 }

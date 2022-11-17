@@ -77,7 +77,7 @@
         });
     </script>
     @endif
-    @include('/livewire/theDayModal')
-    @include('livewire/changeResult')
-    @include('livewire/modeRecord')
+    @include('/livewire/the-day-modal')
+    @include('livewire/change-result')
+    @include('livewire/mode-record')
 </div>
