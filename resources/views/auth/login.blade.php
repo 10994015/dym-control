@@ -1,6 +1,6 @@
 
 <x-guest-layout>
-    <div class="container-fluid" id="loginPage">
+    <div class="container-fluid" id="loginPage" >
         <div class="center">
             <img src="{{asset('/images/logo.png')}}" class="logo">
             <form method="post" action="{{route('login')}}" class="loginForm">
