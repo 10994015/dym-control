@@ -22,16 +22,15 @@
                 </select>
             </div>
         </div>
-        <div class="right">
-        @if(!empty($info))
-            <button class="search open" id="searchBtn"  wire:click="searchFn">搜尋</button>
-            <button class="unlock open" id="unlock">解鎖編輯</button>
-        @else
-            <button class="search" id="searchBtn" disabled wire:click="searchFn">搜尋</button>
-            <button class="unlock" id="unlock" disabled>解鎖編輯</button>
+        <div class="right" >
+            <button class="search  @if(!empty($info)) open @endif @if($islock) close @endif" @if(empty($info)) disabled @endif   @if($islock) disabled @endif id="searchBtn"  wire:click="searchFn">搜尋</button>
+        @if(!$islock)
+            <button class="unlock @if(!empty($info)) open @endif" @if(empty($info)) disabled @endif id="unlock" wire:click="unlockupdate">解鎖編輯</button>
         @endif
-            <button class="updatelock open" id="updatelock" wire:click="updateLock">更新鎖上</button>
-            <button class="reduction open" id="reduction">還原</button>
+            @if($islock)
+            <button class="updatelock open" id="updatelock" wire:click="updateLock" wire:ignore>更新鎖上</button>
+            <button class="reduction open" id="reduction" wire:ignore>還原</button>
+        @endif 
         </div>
     </div>
     @if(!empty($info))
@@ -45,7 +44,8 @@
                         <div class="drawInfo">
                             <div class="left">
                                 <h4>開彩模式</h4>
-                                <select name="" id="modeSelect" disabled wire:model.defer="gameMode">
+                                
+                                <select name="" id="modeSelect" @if(!$islock) disabled class="close" @endif  wire:model.defer="gameMode">
                                     <option value="0" selected>當日預知</option>
                                     <option value="1">風險控制-當日最大損賠</option>
                                 </select>

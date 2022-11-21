@@ -32,7 +32,7 @@ class GameManagement extends Component
     public $guessArr = [];
     public $focusId;
     public $operates = [];
-
+    public $islock = false;
     protected $listeners = ['changeSubmit'=>'changeSubmit'];
 
     public function mount(){
@@ -117,6 +117,7 @@ class GameManagement extends Component
         $this->focusId = -1;
     }
     public function updateLock(){
+        $this->islock = !$this->islock;
         $gameInfo =  GameInfos::where('gamenumber', $this->gameNumber)->first();
 
         $operate = new Operate();
@@ -128,6 +129,9 @@ class GameManagement extends Component
         $gameInfo->mode = $this->gameMode;
         $gameInfo->save();
         $operate->save();    
+    }
+    public function unlockupdate(){
+        $this->islock = !$this->islock;
     }
     public function modeRecord(){
         $operates = Operate::where('gameNumber', $this->gameNumber)->orderBy('id', 'DESC')->get();

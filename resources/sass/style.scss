@@ -153,9 +153,9 @@ main{
                 border-radius: 25px;
                 color:#c5c8ce;
                 width:128px;
-                height: 40px;
-                background-color: #dcdee2;
                 cursor: not-allowed;
+                background-color: #dcdee2;
+                height: 40px;
                 outline: 0;
                 font-size: 12px;
                 margin:0 10px;
@@ -167,8 +167,12 @@ main{
                         background-color:#4C67A8;
                     }
                 }
+                &.close{
+                    cursor: not-allowed;
+                    background-color: #dcdee2;
+                }
                 &.updatelock, &.reduction{
-                    display: none;
+                    
                 }
             }
         }
@@ -230,9 +234,9 @@ main{
                                 text-align: center;
                                 outline: none;
                                 border-radius: 5px;
-                                cursor: not-allowed;
-                                &.open{
-                                    cursor: pointer;
+                                cursor: pointer;
+                                &.close{
+                                    cursor: not-allowed;
                                 }
                             }
                         }

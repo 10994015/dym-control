@@ -158,9 +158,9 @@ main {
   border-radius: 25px;
   color: #c5c8ce;
   width: 128px;
-  height: 40px;
-  background-color: #dcdee2;
   cursor: not-allowed;
+  background-color: #dcdee2;
+  height: 40px;
   outline: 0;
   font-size: 12px;
   margin: 0 10px;
@@ -173,8 +173,9 @@ main {
 #gameManagement > .ivu-body > .right > button.open.unlock {
   background-color: #4C67A8;
 }
-#gameManagement > .ivu-body > .right > button.updatelock, #gameManagement > .ivu-body > .right > button.reduction {
-  display: none;
+#gameManagement > .ivu-body > .right > button.close {
+  cursor: not-allowed;
+  background-color: #dcdee2;
 }
 #gameManagement > .content {
   width: 100%;
@@ -237,10 +238,10 @@ main {
   text-align: center;
   outline: none;
   border-radius: 5px;
-  cursor: not-allowed;
-}
-#gameManagement > .content .tableBox table td > .drawInfo > .left select.open {
   cursor: pointer;
+}
+#gameManagement > .content .tableBox table td > .drawInfo > .left select.close {
+  cursor: not-allowed;
 }
 #gameManagement > .content .tableBox table td > .drawInfo > .center button {
   width: 128px;

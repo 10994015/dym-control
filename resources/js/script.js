@@ -84,18 +84,18 @@ changeResultSubmit.addEventListener('click', ()=>{
     clearInterval(x);
 })
 unlock.addEventListener('click', ()=>{
-    updatelock.style.display = "block";
-    reduction.style.display = "block";
-    unlock.disabled = true;
-    unlock.style.display = "none";
-    searchBtn.disabled = true;
-    searchBtn.classList.remove('open')
-    document.getElementById('modeSelect').classList.add('open');
-    document.getElementById('modeSelect').disabled = false;
-    document.getElementById('viewDrawBtn').disabled = true;
-    document.getElementById('viewDrawBtn').classList.add('lock');
-    document.getElementById('modeRecordBtn').disabled = true;
-    document.getElementById('modeRecordBtn').classList.add('lock');
+    // updatelock.style.display = "block";
+    // reduction.style.display = "block";
+    // unlock.disabled = true;
+    // unlock.style.display = "none";
+    // searchBtn.disabled = true;
+    // searchBtn.classList.remove('open')
+    // document.getElementById('modeSelect').classList.add('open');
+    // document.getElementById('modeSelect').disabled = false;
+    // document.getElementById('viewDrawBtn').disabled = true;
+    // document.getElementById('viewDrawBtn').classList.add('lock');
+    // document.getElementById('modeRecordBtn').disabled = true;
+    // document.getElementById('modeRecordBtn').classList.add('lock');
 })
 window.addEventListener('recalculate', e=>{
     let result = new Set();
