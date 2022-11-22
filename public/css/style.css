@@ -267,8 +267,51 @@ main {
 #gameManagement > .content .tableBox table td > .drawInfo > .right button.lock {
   cursor: not-allowed;
 }
+#gameManagement > .content .tableBox table td > .gameitem {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 10px;
+}
+#gameManagement > .content .tableBox table td > .gameitem > .gamename {
+  background-color: #E3E3E3;
+  color: #111;
+  font-weight: 900;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+#gameManagement > .content .tableBox table td > .gameitem > .number {
+  width: 100%;
+  text-align: center;
+}
+#gameManagement > .content .tableBox table td > .gameitem > .number input {
+  width: 90%;
+  text-align: center;
+  outline: none;
+  border: 1px #ccc solid;
+  height: 32px;
+  border-radius: 4px;
+  color: #515a6e;
+  font-size: 12px;
+  cursor: not-allowed;
+  background-color: #F3F3F3;
+}
+#gameManagement > .content .tableBox table td > .gameitem > .number input.open {
+  cursor: text;
+  background-color: #fff;
+}
+#gameManagement > .content .tableBox table td.table-content-flex {
+  display: flex;
+  align-items: center;
+}
 #gameManagement > .content .tableBox table .table-title {
   width: 15%;
+  font-size: 14px;
 }
 #gameManagement .theDayAnswerModal {
   width: 100%;

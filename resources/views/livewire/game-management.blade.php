@@ -29,7 +29,7 @@
         @endif
             @if($islock)
             <button class="updatelock open" id="updatelock" wire:click="updateLock" wire:ignore>更新鎖上</button>
-            <button class="reduction open" id="reduction" wire:ignore>還原</button>
+            <button class="reduction open" id="reduction" wire:click="setReset" >還原</button>
         @endif 
         </div>
     </div>
@@ -55,6 +55,141 @@
                             </div>
                             <div class="right">
                                 <button wire:click="modeRecord" id="modeRecordBtn">模式變更紀錄</button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-title">賠率設定</td>
+                    <td class="table-content table-content-flex">
+                        <div class="gameitem">
+                            <div class="gamename">
+                                大小
+                            </div>
+                            <div class="number">
+                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" value="1.96">
+                            </div>
+                        </div>
+                        <div class="gameitem">
+                            <div class="gamename">
+                                單雙
+                            </div>
+                            <div class="number">
+                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" value="1.96">
+                            </div>
+                        </div>
+                        <div class="gameitem">
+                            <div class="gamename">
+                                定位膽
+                            </div>
+                            <div class="number">
+                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" wire:model="game3odds">
+                            </div>
+                        </div>
+                        <div class="gameitem">
+                            <div class="gamename">
+                                龍虎
+                            </div>
+                            <div class="number">
+                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" value="1.96">
+                            </div>
+                        </div>
+                        <div class="gameitem">
+                            <div class="gamename">
+                                冠亞二星
+                            </div>
+                            <div class="number">
+                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" value="1.96">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-title">單期限額</td>
+                    <td class="table-content table-content-flex">
+                        <div class="gameitem">
+                            <div class="gamename">
+                                大小
+                            </div>
+                            <div class="number">
+                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" value="100000">
+                            </div>
+                        </div>
+                        <div class="gameitem">
+                            <div class="gamename">
+                                單雙
+                            </div>
+                            <div class="number">
+                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" value="100000">
+                            </div>
+                        </div>
+                        <div class="gameitem">
+                            <div class="gamename">
+                                定位膽
+                            </div>
+                            <div class="number">
+                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" wire:model="game3single_term">
+                            </div>
+                        </div>
+                        <div class="gameitem">
+                            <div class="gamename">
+                                龍虎
+                            </div>
+                            <div class="number">
+                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" value="100000">
+                            </div>
+                        </div>
+                        <div class="gameitem">
+                            <div class="gamename">
+                                冠亞二星
+                            </div>
+                            <div class="number">
+                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" value="100000">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="table-title">單注限額</td>
+                    <td class="table-content table-content-flex">
+                        <div class="gameitem">
+                            <div class="gamename">
+                                大小
+                            </div>
+                            <div class="number">
+                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" value="100000">
+                            </div>
+                        </div>
+                        <div class="gameitem">
+                            <div class="gamename">
+                                單雙
+                            </div>
+                            <div class="number">
+                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" value="100000">
+                            </div>
+                        </div>
+                        <div class="gameitem">
+                            <div class="gamename">
+                                定位膽
+                            </div>
+                            <div class="number">
+                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" wire:model="game3single_bet_limit">
+                            </div>
+                        </div>
+                        <div class="gameitem">
+                            <div class="gamename">
+                                龍虎
+                            </div>
+                            <div class="number">
+                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" value="100000">
+                            </div>
+                        </div>
+                        <div class="gameitem">
+                            <div class="gamename">
+                                冠亞二星
+                            </div>
+                            <div class="number">
+                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" value="100000">
                             </div>
                         </div>
                     </td>

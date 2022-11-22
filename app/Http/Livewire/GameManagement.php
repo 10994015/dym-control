@@ -33,10 +33,18 @@ class GameManagement extends Component
     public $focusId;
     public $operates = [];
     public $islock = false;
+    //定位膽
+    public $game3odds; //賠率
+    public $game3single_term; //單期限額
+    public $game3single_bet_limit; //單注限額
     protected $listeners = ['changeSubmit'=>'changeSubmit'];
 
     public function mount(){
         $this->gameTypes = Gametype::all();
+        $gameInfos = GameInfos::where('gamenumber', '23')->first();
+        $this->game3odds = $gameInfos->odds;
+        $this->game3single_term = $gameInfos->single_term;
+        $this->game3single_bet_limit = $gameInfos->single_bet_limit;
     }
     public function changeGameType(){
         if($this->selectGameType != "-1" ){
@@ -125,10 +133,33 @@ class GameManagement extends Component
         $operate->before = $gameInfo->mode;
         $operate->after = $this->gameMode;
         $operate->user_id = Auth::id();
+        $operate->game3_single_term = $this->game3single_term;
+        $operate->game3_single_bet_limit = $this->game3single_bet_limit;
+        $operate->game3_odds = $this->game3odds;
 
         $gameInfo->mode = $this->gameMode;
+        $gameInfo->odds = $this->game3odds;
+        $gameInfo->single_term = $this->game3single_term;
+        $gameInfo->single_bet_limit = $this->game3single_bet_limit;
         $gameInfo->save();
         $operate->save();    
+    }
+    public function setReset(){
+        $this->islock = !$this->islock;
+        $operate = Operate::where('gamenumber', '23')->orderBy('id', 'DESC')->take(1)->first();
+        $gameInfo = GameInfos::where('gamenumber', '23')->first();
+        // Log::info($operate);
+        $this->game3odds = $operate->game3_odds;
+        $this->game3single_term = $operate->game3_single_term;
+        $this->game3single_bet_limit = $operate->game3_single_bet_limit;
+        $this->gameMode = $operate->after;
+
+        $gameInfo->mode = $this->gameMode;
+        $gameInfo->single_term = $this->game3single_term;
+        $gameInfo->single_bet_limit = $this->game3single_bet_limit;
+        $gameInfo->odds = $this->game3odds;
+        $gameInfo->save();
+
     }
     public function unlockupdate(){
         $this->islock = !$this->islock;
