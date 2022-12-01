@@ -1,4 +1,4 @@
-<div id="gameManagement" >
+<div id="gameManagement" class="gameManagement">
     <div class="title">遊戲設定</div>
     <div class="ivu-body">
         <div class="left">
@@ -215,4 +215,5 @@
     @include('/livewire/the-day-modal')
     @include('livewire/change-result')
     @include('livewire/mode-record')
+    <script src="{{asset('js/script.js')}}"></script>
 </div>

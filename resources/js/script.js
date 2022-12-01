@@ -1,4 +1,4 @@
-const sideBarLink = document.getElementsByClassName('sideBarLink');
+
 const searchBtn = document.getElementById('searchBtn');
 const theDayAnswerModal = document.getElementById('theDayAnswerModal');
 const closetheDayAnswerModal = document.getElementById('closetheDayAnswerModal');
@@ -15,12 +15,8 @@ const reWinValue = document.getElementById('reWinValue');
 const unlock = document.getElementById('unlock');
 const updatelock = document.getElementById('updatelock');
 const reduction = document.getElementById('reduction');
-if(window.location.pathname.includes('home')){
-    sideBarLink[0].classList.add('focus');
-}
-if(window.location.pathname.includes('gameManagement')){
-    sideBarLink[4].classList.add('focus');
-}
+
+
 window.addEventListener('openSearch', e=>{
     if(e.detail.password == '1'){
         searchBtn.classList.add('open');
@@ -83,20 +79,7 @@ changeResultSubmit.addEventListener('click', ()=>{
     )
     clearInterval(x);
 })
-unlock.addEventListener('click', ()=>{
-    // updatelock.style.display = "block";
-    // reduction.style.display = "block";
-    // unlock.disabled = true;
-    // unlock.style.display = "none";
-    // searchBtn.disabled = true;
-    // searchBtn.classList.remove('open')
-    // document.getElementById('modeSelect').classList.add('open');
-    // document.getElementById('modeSelect').disabled = false;
-    // document.getElementById('viewDrawBtn').disabled = true;
-    // document.getElementById('viewDrawBtn').classList.add('lock');
-    // document.getElementById('modeRecordBtn').disabled = true;
-    // document.getElementById('modeRecordBtn').classList.add('lock');
-})
+
 window.addEventListener('recalculate', e=>{
     let result = new Set();
     for(let i=0;i<changeNumber.length;i++){
@@ -161,11 +144,5 @@ function calcBetFn(){
             }
         }
     }
-
     return winMoney;
-    // window.Livewire.emit('calcMoney', winMoney);
-
-    
 }
-
-

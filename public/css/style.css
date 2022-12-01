@@ -74,22 +74,61 @@ main {
   border: 2px #70797A solid;
   transition: 0.3s;
   font-weight: 550;
+  font-size: 16px;
 }
 #sideBar > ul > a.focus {
   border-color: #29BAFF;
   color: #000;
   background-color: #fff;
 }
+#sideBar > ul > a.selected {
+  background-color: #29BAFF;
+  color: #000;
+  border-color: #000;
+}
 #sideBar > ul > a:hover {
   background-color: #29BAFF;
   color: #000;
   border-color: #000;
 }
+#sideBar > ul > ul.smallUl {
+  height: 0;
+  overflow: hidden;
+  transition: 0.3s;
+}
+#sideBar > ul > ul.smallUl.focus {
+  height: 160px;
+  transition: 0.3s;
+}
+#sideBar > ul > ul.smallUl a {
+  width: 165px;
+  height: 55px;
+  text-align: center;
+  background-color: #29BAFF;
+  color: #000;
+  line-height: 51px;
+  margin-top: 21px;
+  border-radius: 30px;
+  border: 2px #70797A solid;
+  transition: 0.3s;
+  font-weight: 550;
+  font-size: 15px;
+  margin-left: 10px;
+  display: block;
+}
+#sideBar > ul > ul.smallUl a:hover {
+  background-color: #fff;
+  border: 2px #29BAFF solid;
+}
+#sideBar > ul > ul.smallUl a.focus {
+  background-color: #fff;
+  border: 2px #29BAFF solid;
+}
 
-#gameManagement {
+.gameManagement {
   width: 100%;
 }
-#gameManagement > .title {
+.gameManagement > .title {
   width: 95%;
   border-top: 2px #8295C3 solid;
   border-bottom: 2px #8295C3 solid;
@@ -99,7 +138,7 @@ main {
   margin: 12px auto;
   font-weight: 500;
 }
-#gameManagement > .ivu-body {
+.gameManagement > .ivu-body {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -110,24 +149,24 @@ main {
   padding: 16px;
   transition: 0.3s;
 }
-#gameManagement > .ivu-body:hover {
+.gameManagement > .ivu-body:hover {
   box-shadow: 0px 3px 5px #dcdee2;
 }
-#gameManagement > .ivu-body > .left {
+.gameManagement > .ivu-body > .left {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#gameManagement > .ivu-body > .left > div {
+.gameManagement > .ivu-body > .left > div {
   margin: 0 10px;
 }
-#gameManagement > .ivu-body > .left > div p {
+.gameManagement > .ivu-body > .left > div p {
   text-align: center;
   font-size: 13px;
   color: #333;
   margin-bottom: 3px;
 }
-#gameManagement > .ivu-body > .left > div p.loading {
+.gameManagement > .ivu-body > .left > div p.loading {
   width: 148px;
   text-align: center;
   line-height: 32px;
@@ -137,7 +176,7 @@ main {
   border-radius: 5px;
   font-size: 12px;
 }
-#gameManagement > .ivu-body > .left > div select {
+.gameManagement > .ivu-body > .left > div select {
   background-color: #29BAFF;
   color: #fff;
   width: 148px;
@@ -149,12 +188,12 @@ main {
   text-align: center;
   padding: 0;
 }
-#gameManagement > .ivu-body > .right {
+.gameManagement > .ivu-body > .right {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#gameManagement > .ivu-body > .right > button {
+.gameManagement > .ivu-body > .right > button {
   border-radius: 25px;
   color: #c5c8ce;
   width: 128px;
@@ -165,23 +204,23 @@ main {
   font-size: 12px;
   margin: 0 10px;
 }
-#gameManagement > .ivu-body > .right > button.open {
+.gameManagement > .ivu-body > .right > button.open {
   background-color: #2ABAFF;
   color: #fff;
   cursor: pointer;
 }
-#gameManagement > .ivu-body > .right > button.open.unlock {
+.gameManagement > .ivu-body > .right > button.open.unlock {
   background-color: #4C67A8;
 }
-#gameManagement > .ivu-body > .right > button.close {
+.gameManagement > .ivu-body > .right > button.close {
   cursor: not-allowed;
   background-color: #dcdee2;
 }
-#gameManagement > .content {
+.gameManagement > .content {
   width: 100%;
   display: block;
 }
-#gameManagement > .content > .gameName {
+.gameManagement > .content > .gameName {
   display: flex;
   justify-content: flex-start;
   align-content: center;
@@ -189,7 +228,7 @@ main {
   margin: 0 auto;
   margin-bottom: 20px;
 }
-#gameManagement > .content > .gameName h2 {
+.gameManagement > .content > .gameName h2 {
   width: 350px;
   height: 45px;
   border-radius: 50px;
@@ -200,24 +239,24 @@ main {
   color: #222;
   font-size: 22px;
 }
-#gameManagement > .content .tableBox {
+.gameManagement > .content .tableBox {
   width: 95%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
-#gameManagement > .content .tableBox table {
+.gameManagement > .content .tableBox table {
   width: 100%;
 }
-#gameManagement > .content .tableBox table td {
+.gameManagement > .content .tableBox table td {
   padding: 15px;
 }
-#gameManagement > .content .tableBox table td > .drawInfo {
+.gameManagement > .content .tableBox table td > .drawInfo {
   display: flex;
   justify-content: space-between;
   padding-right: 60px;
 }
-#gameManagement > .content .tableBox table td > .drawInfo > .left h4 {
+.gameManagement > .content .tableBox table td > .drawInfo > .left h4 {
   width: 137px;
   height: 40px;
   background-color: #e3e3e3;
@@ -227,7 +266,7 @@ main {
   margin-bottom: 12px;
   font-weight: 600;
 }
-#gameManagement > .content .tableBox table td > .drawInfo > .left select {
+.gameManagement > .content .tableBox table td > .drawInfo > .left select {
   width: 137px;
   height: 35px;
   color: #fff;
@@ -240,10 +279,10 @@ main {
   border-radius: 5px;
   cursor: pointer;
 }
-#gameManagement > .content .tableBox table td > .drawInfo > .left select.close {
+.gameManagement > .content .tableBox table td > .drawInfo > .left select.close {
   cursor: not-allowed;
 }
-#gameManagement > .content .tableBox table td > .drawInfo > .center button {
+.gameManagement > .content .tableBox table td > .drawInfo > .center button {
   width: 128px;
   height: 40px;
   cursor: pointer;
@@ -252,10 +291,10 @@ main {
   font-size: 12px;
   border-radius: 25px;
 }
-#gameManagement > .content .tableBox table td > .drawInfo > .center button.lock {
+.gameManagement > .content .tableBox table td > .drawInfo > .center button.lock {
   cursor: not-allowed;
 }
-#gameManagement > .content .tableBox table td > .drawInfo > .right button {
+.gameManagement > .content .tableBox table td > .drawInfo > .right button {
   width: 128px;
   height: 40px;
   cursor: pointer;
@@ -264,17 +303,17 @@ main {
   font-size: 12px;
   border-radius: 25px;
 }
-#gameManagement > .content .tableBox table td > .drawInfo > .right button.lock {
+.gameManagement > .content .tableBox table td > .drawInfo > .right button.lock {
   cursor: not-allowed;
 }
-#gameManagement > .content .tableBox table td > .gameitem {
+.gameManagement > .content .tableBox table td > .gameitem {
   width: 20%;
   display: flex;
   align-items: center;
   flex-direction: column;
   margin: 0 10px;
 }
-#gameManagement > .content .tableBox table td > .gameitem > .gamename {
+.gameManagement > .content .tableBox table td > .gameitem > .gamename {
   background-color: #E3E3E3;
   color: #111;
   font-weight: 900;
@@ -285,11 +324,11 @@ main {
   font-size: 12px;
   margin-bottom: 6px;
 }
-#gameManagement > .content .tableBox table td > .gameitem > .number {
+.gameManagement > .content .tableBox table td > .gameitem > .number {
   width: 100%;
   text-align: center;
 }
-#gameManagement > .content .tableBox table td > .gameitem > .number input {
+.gameManagement > .content .tableBox table td > .gameitem > .number input {
   width: 90%;
   text-align: center;
   outline: none;
@@ -301,19 +340,19 @@ main {
   cursor: not-allowed;
   background-color: #F3F3F3;
 }
-#gameManagement > .content .tableBox table td > .gameitem > .number input.open {
+.gameManagement > .content .tableBox table td > .gameitem > .number input.open {
   cursor: text;
   background-color: #fff;
 }
-#gameManagement > .content .tableBox table td.table-content-flex {
+.gameManagement > .content .tableBox table td.table-content-flex {
   display: flex;
   align-items: center;
 }
-#gameManagement > .content .tableBox table .table-title {
+.gameManagement > .content .tableBox table .table-title {
   width: 15%;
   font-size: 14px;
 }
-#gameManagement .theDayAnswerModal {
+.gameManagement .theDayAnswerModal {
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -331,7 +370,7 @@ main {
     opacity: 0;
   }
 }
-#gameManagement .theDayAnswerModal > .back {
+.gameManagement .theDayAnswerModal > .back {
   position: absolute;
   top: 0;
   left: 0;
@@ -339,7 +378,7 @@ main {
   width: 100%;
   height: 100%;
 }
-#gameManagement .theDayAnswerModal > .content {
+.gameManagement .theDayAnswerModal > .content {
   width: 700px;
   padding: 15px;
   background-color: #70797E;
@@ -348,7 +387,7 @@ main {
   border-radius: 6px;
   position: relative;
 }
-#gameManagement .theDayAnswerModal > .content > #closetheDayAnswerModal {
+.gameManagement .theDayAnswerModal > .content > #closetheDayAnswerModal {
   position: absolute;
   top: 11px;
   right: 15px;
@@ -361,20 +400,20 @@ main {
   border-radius: 50%;
   transition: 0.3s;
 }
-#gameManagement .theDayAnswerModal > .content > #closetheDayAnswerModal:hover {
+.gameManagement .theDayAnswerModal > .content > #closetheDayAnswerModal:hover {
   color: #ccc;
 }
-#gameManagement .theDayAnswerModal > .content > .searchDiv {
+.gameManagement .theDayAnswerModal > .content > .searchDiv {
   display: flex;
   justify-content: space-around;
   align-items: center;
   margin: 15px 0;
 }
-#gameManagement .theDayAnswerModal > .content > .searchDiv div.timeSearch, #gameManagement .theDayAnswerModal > .content > .searchDiv div.numberSearch {
+.gameManagement .theDayAnswerModal > .content > .searchDiv div.timeSearch, .gameManagement .theDayAnswerModal > .content > .searchDiv div.numberSearch {
   display: flex;
   align-items: center;
 }
-#gameManagement .theDayAnswerModal > .content > .searchDiv div.timeSearch input, #gameManagement .theDayAnswerModal > .content > .searchDiv div.numberSearch input {
+.gameManagement .theDayAnswerModal > .content > .searchDiv div.timeSearch input, .gameManagement .theDayAnswerModal > .content > .searchDiv div.numberSearch input {
   color: #515a6e;
   width: 194px;
   height: 32px;
@@ -384,7 +423,7 @@ main {
   margin: 0 5px;
   font-size: 12px;
 }
-#gameManagement .theDayAnswerModal > .content > .searchDiv div.timeSearch button, #gameManagement .theDayAnswerModal > .content > .searchDiv div.numberSearch button {
+.gameManagement .theDayAnswerModal > .content > .searchDiv div.timeSearch button, .gameManagement .theDayAnswerModal > .content > .searchDiv div.numberSearch button {
   background-color: #2d8cf0;
   color: #fff;
   widtH: 70px;
@@ -394,58 +433,60 @@ main {
   border-radius: 4px;
   margin: 0 5px;
 }
-#gameManagement .theDayAnswerModal > .content > .table {
+.gameManagement .theDayAnswerModal > .content > .table {
   font-size: 12px;
   text-align: center;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
-#gameManagement .theDayAnswerModal > .content > .table .thead {
+.gameManagement .theDayAnswerModal > .content > .table .thead {
   background-color: #E3E3E3;
   display: flex;
   width: 100%;
 }
-#gameManagement .theDayAnswerModal > .content > .table .tbody {
-  height: 500px;
+.gameManagement .theDayAnswerModal > .content > .table .tbody {
+  height: 80%;
+  max-height: 800px;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
 }
-#gameManagement .theDayAnswerModal > .content > .table .tbody::-webkit-scrollbar {
+.gameManagement .theDayAnswerModal > .content > .table .tbody::-webkit-scrollbar {
   width: 5px;
 }
-#gameManagement .theDayAnswerModal > .content > .table .tbody::-webkit-scrollbar-button {
+.gameManagement .theDayAnswerModal > .content > .table .tbody::-webkit-scrollbar-button {
   background: transparent;
   border-radius: 4px;
 }
-#gameManagement .theDayAnswerModal > .content > .table .tbody::-webkit-scrollbar-track-piece {
+.gameManagement .theDayAnswerModal > .content > .table .tbody::-webkit-scrollbar-track-piece {
   background: transparent;
 }
-#gameManagement .theDayAnswerModal > .content > .table .tbody::-webkit-scrollbar-thumb {
+.gameManagement .theDayAnswerModal > .content > .table .tbody::-webkit-scrollbar-thumb {
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.4);
   border: 1px solid slategrey;
 }
-#gameManagement .theDayAnswerModal > .content > .table .tbody::-webkit-scrollbar-track {
+.gameManagement .theDayAnswerModal > .content > .table .tbody::-webkit-scrollbar-track {
   box-shadow: #ccc;
 }
-#gameManagement .theDayAnswerModal > .content > .table .tr {
+.gameManagement .theDayAnswerModal > .content > .table .tr {
   background-color: #fff;
   transition: 0.3s;
   display: flex;
   width: 100%;
 }
-#gameManagement .theDayAnswerModal > .content > .table .tr:hover {
+.gameManagement .theDayAnswerModal > .content > .table .tr:hover {
   background-color: #EBF7FF;
 }
-#gameManagement .theDayAnswerModal > .content > .table .tr .td {
+.gameManagement .theDayAnswerModal > .content > .table .tr .td {
   width: 25%;
   padding: 6px;
   text-align: center;
   display: flex;
   justify-content: center;
 }
-#gameManagement .theDayAnswerModal > .content > .table .tr .td button {
+.gameManagement .theDayAnswerModal > .content > .table .tr .td button {
   color: #c5c8ce;
   background-color: #f7f7f7;
   border: #dcdee2 1px solid;
@@ -454,16 +495,16 @@ main {
   border-radius: 4px;
   cursor: not-allowed;
 }
-#gameManagement .theDayAnswerModal > .content > .table .tr .td button.ok {
+.gameManagement .theDayAnswerModal > .content > .table .tr .td button.ok {
   width: 64px;
   color: #fff;
   background-color: #2D8CF0;
   cursor: pointer;
 }
-#gameManagement .theDayAnswerModal > .content > .table .tr .td button.no {
+.gameManagement .theDayAnswerModal > .content > .table .tr .td button.no {
   width: 64px;
 }
-#gameManagement .changeResult {
+.gameManagement .changeResult {
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -481,7 +522,7 @@ main {
     opacity: 0;
   }
 }
-#gameManagement .changeResult > .back {
+.gameManagement .changeResult > .back {
   position: absolute;
   top: 0;
   left: 0;
@@ -489,7 +530,7 @@ main {
   width: 100%;
   height: 100%;
 }
-#gameManagement .changeResult > .content {
+.gameManagement .changeResult > .content {
   width: 1000px;
   height: 500px;
   background-color: #70797E;
@@ -499,7 +540,7 @@ main {
   color: #fff;
   position: relative;
 }
-#gameManagement .changeResult > .content > #closeChangeResult {
+.gameManagement .changeResult > .content > #closeChangeResult {
   position: absolute;
   top: 11px;
   right: 15px;
@@ -512,24 +553,24 @@ main {
   border-radius: 50%;
   transition: 0.3s;
 }
-#gameManagement .changeResult > .content > #closeChangeResult:hover {
+.gameManagement .changeResult > .content > #closeChangeResult:hover {
   color: #ccc;
 }
-#gameManagement .changeResult > .content > h4 {
+.gameManagement .changeResult > .content > h4 {
   text-align: center;
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 30px;
 }
-#gameManagement .changeResult > .content input {
+.gameManagement .changeResult > .content input {
   color: #000;
 }
-#gameManagement .changeResult > .content > div {
+.gameManagement .changeResult > .content > div {
   display: flex;
   align-items: center;
   margin-bottom: 12px;
 }
-#gameManagement .changeResult > .content > div.timeleft {
+.gameManagement .changeResult > .content > div.timeleft {
   width: 140px;
   height: 75px;
   border-radius: 12px;
@@ -541,10 +582,10 @@ main {
   background-color: #fff;
   margin: 0 auto 15px;
 }
-#gameManagement .changeResult > .content > div.timeleft > p {
+.gameManagement .changeResult > .content > div.timeleft > p {
   font-size: 14px;
 }
-#gameManagement .changeResult > .content > div.newBet {
+.gameManagement .changeResult > .content > div.newBet {
   width: 300px;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -558,58 +599,58 @@ main {
   background-color: #fff;
   float: right;
 }
-#gameManagement .changeResult > .content > div.newBet::-webkit-scrollbar {
+.gameManagement .changeResult > .content > div.newBet::-webkit-scrollbar {
   width: 5px;
 }
-#gameManagement .changeResult > .content > div.newBet::-webkit-scrollbar-track {
+.gameManagement .changeResult > .content > div.newBet::-webkit-scrollbar-track {
   background-color: #555;
   border-radius: 10px;
 }
-#gameManagement .changeResult > .content > div.newBet::-webkit-scrollbar-thumb {
+.gameManagement .changeResult > .content > div.newBet::-webkit-scrollbar-thumb {
   background-color: ccc;
 }
-#gameManagement .changeResult > .content > div.newBet > p {
+.gameManagement .changeResult > .content > div.newBet > p {
   font-size: 15px;
   font-weight: 700;
   text-align: center;
 }
-#gameManagement .changeResult > .content > div.btnList {
+.gameManagement .changeResult > .content > div.btnList {
   float: right;
 }
-#gameManagement .changeResult > .content > div.btnList button {
+.gameManagement .changeResult > .content > div.btnList button {
   width: 56px;
   height: 31px;
   border-radius: 4px;
   font-size: 12px;
   margin-left: 12px;
 }
-#gameManagement .changeResult > .content > div.btnList .cancel {
+.gameManagement .changeResult > .content > div.btnList .cancel {
   background-color: #fff;
   color: #111;
 }
-#gameManagement .changeResult > .content > div.btnList .submit {
+.gameManagement .changeResult > .content > div.btnList .submit {
   background-color: #2ABAFF;
   color: #fff;
 }
-#gameManagement .changeResult > .content > div > p {
+.gameManagement .changeResult > .content > div > p {
   margin-right: 10px;
   font-size: 13px;
 }
-#gameManagement .changeResult > .content > div input[type=number] {
+.gameManagement .changeResult > .content > div input[type=number] {
   width: 125px;
   height: 32px;
   border-radius: 6px;
   font-size: 13px;
   cursor: not-allowed;
 }
-#gameManagement .changeResult > .content > div input[type=number].change {
+.gameManagement .changeResult > .content > div input[type=number].change {
   width: 60px;
   cursor: default;
 }
-#gameManagement .changeResult > .content > div span {
+.gameManagement .changeResult > .content > div span {
   margin: 0 4px;
 }
-#gameManagement .changeResult > .content > div .reCalcBtn {
+.gameManagement .changeResult > .content > div .reCalcBtn {
   background-color: #2d8cf0;
   color: #fff;
   width: 80px;
@@ -618,7 +659,7 @@ main {
   cursor: pointer;
   font-size: 12px;
 }
-#gameManagement .modeRecord {
+.gameManagement .modeRecord {
   position: fixed;
   top: 0;
   left: 0;
@@ -636,7 +677,7 @@ main {
     opacity: 0;
   }
 }
-#gameManagement .modeRecord > .content {
+.gameManagement .modeRecord > .content {
   width: 520px;
   height: 600px;
   border-radius: 5px;
@@ -646,7 +687,7 @@ main {
   justify-content: center;
   align-items: center;
 }
-#gameManagement .modeRecord > .content a#closeModeRecord {
+.gameManagement .modeRecord > .content a#closeModeRecord {
   position: absolute;
   top: 10px;
   right: 15px;
@@ -659,17 +700,17 @@ main {
   text-align: center;
   line-height: 28px;
 }
-#gameManagement .modeRecord > .content > .data {
+.gameManagement .modeRecord > .content > .data {
   width: 480px;
   height: 480px;
   background-color: #fff;
 }
-#gameManagement .modeRecord > .content > .data > .data-title {
+.gameManagement .modeRecord > .content > .data > .data-title {
   display: flex;
   width: 100%;
   height: 40px;
 }
-#gameManagement .modeRecord > .content > .data > .data-title > .item {
+.gameManagement .modeRecord > .content > .data > .data-title > .item {
   width: 25%;
   background-color: #E3E3E3;
   color: #515A6E;
@@ -679,18 +720,18 @@ main {
   line-height: 40px;
   font-size: 13px;
 }
-#gameManagement .modeRecord > .content > .data > .data-box {
+.gameManagement .modeRecord > .content > .data > .data-box {
   width: 100%;
   height: 440px;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
 }
-#gameManagement .modeRecord > .content > .data > .data-box > .data-list {
+.gameManagement .modeRecord > .content > .data > .data-box > .data-list {
   border-bottom: 1px #ccc solid;
   display: flex;
 }
-#gameManagement .modeRecord > .content > .data > .data-box > .data-list > .item {
+.gameManagement .modeRecord > .content > .data > .data-box > .data-list > .item {
   width: 25%;
   min-width: 25%;
   max-width: 25%;
@@ -702,8 +743,74 @@ main {
   justify-content: center;
   align-items: center;
 }
-#gameManagement .modeRecord > .content > .data > .data-box > .data-list > .item > p {
+.gameManagement .modeRecord > .content > .data > .data-box > .data-list > .item > p {
   word-break: break-all;
+}
+
+.gameStatus {
+  width: 100%;
+}
+.gameStatus > .title {
+  width: 95%;
+  border-top: 2px #8295C3 solid;
+  border-bottom: 2px #8295C3 solid;
+  padding: 8px 0;
+  font-size: 32px;
+  text-align: center;
+  margin: 12px auto;
+  font-weight: 500;
+}
+.gameStatus .content {
+  width: 95%;
+  margin: 30px auto;
+}
+.gameStatus .content > .list {
+  display: flex;
+  padding: 10px 0;
+  width: 100%;
+  border-bottom: 1px #e3e3e3 solid;
+}
+.gameStatus .content > .list.list-title {
+  background-color: #E3E3E3;
+  border-bottom: none;
+  padding: 8px 0;
+}
+.gameStatus .content > .list.list-title > .item {
+  font-weight: 900;
+}
+.gameStatus .content > .list > .item {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+.gameStatus .content > .list > .item > .name {
+  text-align: center;
+}
+.gameStatus .content > .list > .item > .statu {
+  background-color: #BFBFBF;
+  color: #fff;
+  text-align: center;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0;
+  font-size: 12px;
+  border-radius: 8px;
+}
+.gameStatus .content > .list > .item > .statu.open {
+  background-color: #73D954;
+}
+.gameStatus .content > .list > .item > select {
+  width: 90%;
+  border-radius: 6px;
+  outline: none;
+  border: 1px #ccc solid;
+  font-size: 12px;
+  height: 35px;
+  text-align: center;
+  padding: 0;
 }
 
 #loginPage {

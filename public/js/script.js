@@ -3,7 +3,6 @@ var __webpack_exports__ = {};
 /*!********************************!*\
   !*** ./resources/js/script.js ***!
   \********************************/
-var sideBarLink = document.getElementsByClassName('sideBarLink');
 var searchBtn = document.getElementById('searchBtn');
 var theDayAnswerModal = document.getElementById('theDayAnswerModal');
 var closetheDayAnswerModal = document.getElementById('closetheDayAnswerModal');
@@ -20,12 +19,6 @@ var reWinValue = document.getElementById('reWinValue');
 var unlock = document.getElementById('unlock');
 var updatelock = document.getElementById('updatelock');
 var reduction = document.getElementById('reduction');
-if (window.location.pathname.includes('home')) {
-  sideBarLink[0].classList.add('focus');
-}
-if (window.location.pathname.includes('gameManagement')) {
-  sideBarLink[4].classList.add('focus');
-}
 window.addEventListener('openSearch', function (e) {
   if (e.detail.password == '1') {
     searchBtn.classList.add('open');
@@ -78,20 +71,6 @@ changeResultSubmit.addEventListener('click', function () {
   window.Livewire.emit('changeSubmit', arr);
   Swal.fire('更新成功', '', 'success');
   clearInterval(x);
-});
-unlock.addEventListener('click', function () {
-  // updatelock.style.display = "block";
-  // reduction.style.display = "block";
-  // unlock.disabled = true;
-  // unlock.style.display = "none";
-  // searchBtn.disabled = true;
-  // searchBtn.classList.remove('open')
-  // document.getElementById('modeSelect').classList.add('open');
-  // document.getElementById('modeSelect').disabled = false;
-  // document.getElementById('viewDrawBtn').disabled = true;
-  // document.getElementById('viewDrawBtn').classList.add('lock');
-  // document.getElementById('modeRecordBtn').disabled = true;
-  // document.getElementById('modeRecordBtn').classList.add('lock');
 });
 window.addEventListener('recalculate', function (e) {
   var result = new Set();
@@ -148,7 +127,6 @@ function calcBetFn() {
     }
   }
   return winMoney;
-  // window.Livewire.emit('calcMoney', winMoney);
 }
 /******/ })()
 ;

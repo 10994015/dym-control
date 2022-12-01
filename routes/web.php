@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\GameManagement;
+use App\Http\Livewire\GameStatus;
 use App\Http\Livewire\Home;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', Home::class)->middleware('auth');
 Route::get('/gameManagement', GameManagement::class)->middleware('auth');
+Route::get('/gameStatus', GameStatus::class)->middleware('auth');
 
 Route::middleware([
     'auth:sanctum',
