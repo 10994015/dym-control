@@ -7,7 +7,7 @@
                 @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label text-dark" >登入帳號</label>
-                    <input type="email" name="email" placeholder="Email..." class="form-control text-dark bg-transparent" id="email" aria-describedby="emailHelp"  autofocus>
+                    <input type="text" name="username" placeholder="Username..." class="form-control text-dark bg-transparent" id="email" aria-describedby="emailHelp"  autofocus>
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label text-dark">登入密碼</label>
