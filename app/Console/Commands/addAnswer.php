@@ -97,7 +97,7 @@ class addAnswer extends Command
                     $answer->save();
                 }
             }
-            sleep(30);
+            sleep(60);
         }
 
         
