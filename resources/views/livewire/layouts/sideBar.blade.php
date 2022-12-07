@@ -12,6 +12,7 @@
         <a href="javascript:;" class="sideBarLink" id="gameManagementBtn">遊戲管理</a>
         <ul class="smallUl" id="gameManagementUl">
             <a href="{{url('gameStatus')}}" class="li-btn">遊戲狀態</a>
+            <a href="{{url('userStatus')}}" class="li-btn">使用者狀態</a>
             <a href="{{url('gameManagement')}}" class="li-btn">遊戲設定</a>
         </ul>
         <a href="/" class="sideBarLink">配置</a>

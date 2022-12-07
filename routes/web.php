@@ -4,6 +4,7 @@ use App\Http\Livewire\Answer;
 use App\Http\Livewire\GameManagement;
 use App\Http\Livewire\GameStatus;
 use App\Http\Livewire\Home;
+use App\Http\Livewire\UserStatus;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', Home::class)->middleware('auth');
 Route::get('/gameManagement', GameManagement::class)->middleware('auth');
 Route::get('/gameStatus', GameStatus::class)->middleware('auth');
+Route::get('/userStatus', UserStatus::class)->middleware('auth');
 Route::get('/answer', Answer::class)->middleware('auth');
 
 Route::middleware([

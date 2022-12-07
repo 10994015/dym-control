@@ -8,8 +8,8 @@
             <div class="item"><p>遊戲名稱</p></div>
             <div class="item"><p>狀態</p></div>
             <div class="item"><p>操作</p></div>
-            <div class="item"><p>分類</p></div>
-            <div class="item"><p>分類操作</p></div>
+            <div class="item"><p></p></div>
+            <div class="item"><p></p></div>
         </div>
         <div class="list">
             <div class="item"><p class="name">60秒飛機競速</p></div>
@@ -20,8 +20,13 @@
                     <option value="0">關閉</option>
                 </select>
             </div>
-            <div class="item"><p></p></div>
-            <div class="item"><p></p></div>
+            <div class="item">
+               
+            </div>
+            <div class="item">
+
+                
+            </div>
         </div>
     </div>
 </div>
