@@ -852,7 +852,7 @@ main{
         }
     }
 }
-.userStatus{
+.userStatus, .memberWallet{
     width:100%;
     >.title{
         width:95%;
@@ -966,10 +966,35 @@ main{
                     }
                     
                 }
+                >input[type='number']{
+                    width:150px;
+                    margin-right: 15px;
+                }
                 >button{
                     font-size: 14px;
+                    &.storeBtn{
+                        color:#fff;
+                        background-color: #29BAFF;
+                    }
                 }
             }
+        }
+    }
+}
+.memberWalletVerify{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    padding: 50px 0;
+    >form{
+        width:400px;
+        >input{
+            width:100%;
+            margin:15px 0;
+        }
+        >button{
+            width:100%;
         }
     }
 }

@@ -5,7 +5,7 @@
     <div class="title">使用者狀態</div>
     <div class="content">
         <div class="searchBox">
-            <input type="text" placeholder="請輸入帳號..." class="form-control" wire:model='searchText' >
+            <input type="text" placeholder="請輸入使用者帳號或手機..." class="form-control" wire:model='searchText' >
         </div>
         <div class="list list-title">
             <div class="item"><p>使用者名稱</p></div>

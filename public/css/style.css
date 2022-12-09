@@ -823,10 +823,10 @@ main {
   padding: 0 8px;
 }
 
-.userStatus {
+.userStatus, .memberWallet {
   width: 100%;
 }
-.userStatus > .title {
+.userStatus > .title, .memberWallet > .title {
   width: 95%;
   border-top: 2px #8295C3 solid;
   border-bottom: 2px #8295C3 solid;
@@ -836,44 +836,44 @@ main {
   margin: 12px auto;
   font-weight: 500;
 }
-.userStatus .content {
+.userStatus .content, .memberWallet .content {
   width: 95%;
   margin: 30px auto;
 }
-.userStatus .content .searchBox {
+.userStatus .content .searchBox, .memberWallet .content .searchBox {
   margin-bottom: 15px;
 }
-.userStatus .content .searchBox > input {
+.userStatus .content .searchBox > input, .memberWallet .content .searchBox > input {
   border-radius: 8px;
   border: 1px #aaa solid;
   font-size: 14px;
   width: 300px;
 }
-.userStatus .content > .list {
+.userStatus .content > .list, .memberWallet .content > .list {
   display: flex;
   padding: 10px 0;
   width: 100%;
   border-bottom: 1px #e3e3e3 solid;
 }
-.userStatus .content > .list.list-title {
+.userStatus .content > .list.list-title, .memberWallet .content > .list.list-title {
   background-color: #E3E3E3;
   border-bottom: none;
   padding: 8px 0;
 }
-.userStatus .content > .list.list-title > .item {
+.userStatus .content > .list.list-title > .item, .memberWallet .content > .list.list-title > .item {
   font-weight: 900;
 }
-.userStatus .content > .list > .item {
+.userStatus .content > .list > .item, .memberWallet .content > .list > .item {
   width: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 13px;
 }
-.userStatus .content > .list > .item > .name {
+.userStatus .content > .list > .item > .name, .memberWallet .content > .list > .item > .name {
   text-align: center;
 }
-.userStatus .content > .list > .item > .statu {
+.userStatus .content > .list > .item > .statu, .memberWallet .content > .list > .item > .statu {
   background-color: #BFBFBF;
   color: #fff;
   text-align: center;
@@ -884,10 +884,10 @@ main {
   font-size: 12px;
   border-radius: 8px;
 }
-.userStatus .content > .list > .item > .statu.open {
+.userStatus .content > .list > .item > .statu.open, .memberWallet .content > .list > .item > .statu.open {
   background-color: #73D954;
 }
-.userStatus .content > .list > .item > select {
+.userStatus .content > .list > .item > select, .memberWallet .content > .list > .item > select {
   width: 90%;
   border-radius: 6px;
   outline: none;
@@ -898,7 +898,7 @@ main {
   padding: 0;
   padding: 0 8px;
 }
-.userStatus .content > .list > .item > input {
+.userStatus .content > .list > .item > input, .memberWallet .content > .list > .item > input {
   width: 90%;
   border-radius: 6px;
   outline: none;
@@ -907,7 +907,7 @@ main {
   height: 35px;
   padding: 0 8px;
 }
-.userStatus .content > .list > .item > input[type=checkbox], .userStatus .content > .list > .item input[type=radio] {
+.userStatus .content > .list > .item > input[type=checkbox], .userStatus .content > .list > .item input[type=radio], .memberWallet .content > .list > .item > input[type=checkbox], .memberWallet .content > .list > .item input[type=radio] {
   position: relative;
   width: 50px;
   height: 25px;
@@ -918,7 +918,7 @@ main {
   cursor: pointer;
   border-radius: 20px;
 }
-.userStatus .content > .list > .item > input[type=checkbox]::before, .userStatus .content > .list > .item input[type=radio]::before {
+.userStatus .content > .list > .item > input[type=checkbox]::before, .userStatus .content > .list > .item input[type=radio]::before, .memberWallet .content > .list > .item > input[type=checkbox]::before, .memberWallet .content > .list > .item input[type=radio]::before {
   content: "";
   position: absolute;
   top: 0;
@@ -930,17 +930,43 @@ main {
   transform: scale(0.98, 0.96);
   transition: 0.5s;
 }
-.userStatus .content > .list > .item > input[type=checkbox]:checked, .userStatus .content > .list > .item input[type=radio]:checked {
+.userStatus .content > .list > .item > input[type=checkbox]:checked, .userStatus .content > .list > .item input[type=radio]:checked, .memberWallet .content > .list > .item > input[type=checkbox]:checked, .memberWallet .content > .list > .item input[type=radio]:checked {
   background: linear-gradient(to right, #29BAFF, #2d8cf0);
 }
-.userStatus .content > .list > .item > input[type=checkbox]:checked::before, .userStatus .content > .list > .item input[type=radio]:checked::before {
+.userStatus .content > .list > .item > input[type=checkbox]:checked::before, .userStatus .content > .list > .item input[type=radio]:checked::before, .memberWallet .content > .list > .item > input[type=checkbox]:checked::before, .memberWallet .content > .list > .item input[type=radio]:checked::before {
   left: 25px;
 }
-.userStatus .content > .list > .item > input[type=checkbox]::after, .userStatus .content > .list > .item input[type=radio]::after {
+.userStatus .content > .list > .item > input[type=checkbox]::after, .userStatus .content > .list > .item input[type=radio]::after, .memberWallet .content > .list > .item > input[type=checkbox]::after, .memberWallet .content > .list > .item input[type=radio]::after {
   content: "";
 }
-.userStatus .content > .list > .item > button {
+.userStatus .content > .list > .item > input[type=number], .memberWallet .content > .list > .item > input[type=number] {
+  width: 150px;
+  margin-right: 15px;
+}
+.userStatus .content > .list > .item > button, .memberWallet .content > .list > .item > button {
   font-size: 14px;
+}
+.userStatus .content > .list > .item > button.storeBtn, .memberWallet .content > .list > .item > button.storeBtn {
+  color: #fff;
+  background-color: #29BAFF;
+}
+
+.memberWalletVerify {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 50px 0;
+}
+.memberWalletVerify > form {
+  width: 400px;
+}
+.memberWalletVerify > form > input {
+  width: 100%;
+  margin: 15px 0;
+}
+.memberWalletVerify > form > button {
+  width: 100%;
 }
 
 #loginPage {
