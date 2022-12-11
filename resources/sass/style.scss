@@ -1052,6 +1052,172 @@ main{
         }
     }
 }
+.statisticalData{
+    width:100%;
+    >.title{
+        width:95%;
+        border-top:2px #8295C3 solid;
+        border-bottom:2px #8295C3 solid;
+        padding: 8px 0;
+        font-size: 32px;
+        text-align: center;
+        margin:12px auto;
+        font-weight: 500;
+    }
+    >.ivu-body{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border:1px #dcdee2 solid;
+        border-radius: 8px;
+        width:95%;
+        margin:20px auto;
+        padding: 16px;
+        transition: .3s;
+        &:hover{
+            box-shadow: 0px 3px 5px #dcdee2;
+        }
+        >.left{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            >div{
+                margin:0 10px;
+                p{
+                    text-align: center;
+                    font-size: 13px;
+                    color:#333;
+                    margin-bottom: 3px;
+                    &.loading{
+                        width:148px;
+                        text-align: center;
+                        line-height: 32px;
+                        height: 32px;
+                        background-color: #29BAFF;
+                        color:#fff;
+                        border-radius: 5px;
+                        font-size: 12px;
+                    }
+                }
+                input{
+                    background-color: #fff;
+                    color:#000;
+                    width:150px;
+                    height: 32px;
+                    border-radius: 5px;
+                    border:1px #ccc solid;
+                    font-size: 12px;
+                    line-height: 32px;
+                    text-align: center;
+                    padding: 0 8px ;
+                }
+            }
+        }
+        >.right{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            >button{
+                border-radius: 25px;
+                color:#c5c8ce;
+                width:128px;
+                cursor: not-allowed;
+                background-color: #dcdee2;
+                height: 40px;
+                outline: 0;
+                font-size: 12px;
+                margin:0 10px;
+                &.open{
+                    background-color: #2ABAFF;
+                    color:#fff;
+                    cursor: pointer;
+                    &.unlock{
+                        background-color:#4C67A8;
+                    }
+                }
+                &.close{
+                    cursor: not-allowed;
+                    background-color: #dcdee2;
+                }
+                &.updatelock, &.reduction{
+                    
+                }
+            }
+        }
+    }
+    .content{
+        width:95%;
+        margin: 30px auto;
+        >.list{
+            display: flex;
+            padding: 10px 0;
+            width:100%;
+            border-bottom: 1px #e3e3e3 solid;
+            &.list-title{
+                background-color: #E3E3E3;
+                border-bottom:none;
+                padding: 8px 0;
+                >.item{
+                    font-weight: 900;
+                }
+            }
+            &.ondata{
+                text-align: center;
+                width:100%;
+                padding: 15px 0;
+                p{
+                    text-align: center;
+                    width:100%;
+                    font-size: 14px;
+                }
+            }
+            >.item{
+                width:25%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 13px;
+                >.name{
+                    text-align: center;
+                }
+                >.statu{
+                    background-color: #BFBFBF;
+                    color:#fff;
+                    text-align: center;
+                    width:60px;
+                    height: 30px;
+                    line-height: 30px;
+                    padding: 0;
+                    font-size: 12px;
+                    border-radius: 8px;
+                    &.open{
+                        background-color: #73D954;
+                    }
+                }
+                >select{
+                    width:90%;
+                    border-radius: 6px;
+                    outline: none;
+                    border:1px #ccc solid;
+                    text-align: center;
+                    font-size: 12px;
+                    height: 35px;
+                    padding: 0;
+                    padding: 0 8px;
+                }
+                >input{
+                    width:90%;
+                    border-radius: 6px;
+                    outline: none;
+                    border:1px #ccc solid;
+                    font-size: 12px;
+                    height: 35px;
+                    padding: 0 8px;
+                }
+            }
+        }
+    }
+}
 #loginPage{
     width:100%;
     height: 100vh;

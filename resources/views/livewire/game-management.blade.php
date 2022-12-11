@@ -44,7 +44,6 @@
                         <div class="drawInfo">
                             <div class="left">
                                 <h4>開彩模式</h4>
-                                
                                 <select name="" id="modeSelect" @if(!$islock) disabled class="close" @endif  wire:model.defer="gameMode">
                                     <option value="0" selected>當日預知</option>
                                     <option value="1">風險控制-當日最大損賠</option>

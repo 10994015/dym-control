@@ -69,4 +69,7 @@ class User extends Authenticatable
     public function operates(){
         return $this->hasMany(Operate::class);
     }
+    public function betlists(){
+        return $this->hasMany(BetList::class);
+    }
 }
