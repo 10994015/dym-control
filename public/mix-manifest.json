@@ -2,6 +2,7 @@
     "/js/app.js": "/js/app.js",
     "/js/script.js": "/js/script.js",
     "/js/sidebar.js": "/js/sidebar.js",
+    "/js/warning.js": "/js/warning.js",
     "/css/app.css": "/css/app.css",
     "/css/style.css": "/css/style.css"
 }

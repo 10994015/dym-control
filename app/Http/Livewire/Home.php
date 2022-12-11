@@ -4,14 +4,26 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Answer as ModelsAnswer;
+use App\Models\LoginFail;
+use App\Models\LoginRecord;
 
 class Home extends Component
 {
+    protected $listeners = ['watchFail' => 'watchFail'];
+    
     public function mount(){
         $nowDate = date('Y-m-d H:i');
         $answer = ModelsAnswer::where('bet_time', $nowDate)->count();
         if($answer < 1){
             $this->store();
+        }
+    }
+    public function watchFail(){
+        $failed = LoginFail::find(1);
+        if($failed->failed >= 3){
+            $this->dispatchBrowserEvent('showWarning');
+        }else{
+            $this->dispatchBrowserEvent('closeWarning');
         }
     }
     public function store(){
@@ -62,6 +74,7 @@ class Home extends Component
     }
     public function render()
     {
-        return view('livewire.home')->layout('livewire/layouts/base');
+        $login_record = LoginRecord::orderBy('created_at', 'DESC')->first();
+        return view('livewire.home', ['login_record'=>$login_record])->layout('livewire/layouts/base');
     }
 }

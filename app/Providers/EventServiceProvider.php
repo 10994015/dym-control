@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Listeners\LoginFailedListener;
 use App\Listeners\LoginListener;
+use Illuminate\Auth\Events\Failed;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -23,6 +25,9 @@ class EventServiceProvider extends ServiceProvider
         Login::class =>[
             LoginListener::class,
         ],
+        Failed::class =>[
+            LoginFailedListener::class,
+        ]
     ];
 
     /**

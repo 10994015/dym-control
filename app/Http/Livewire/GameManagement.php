@@ -6,6 +6,7 @@ use App\Models\Answer;
 use App\Models\Game;
 use App\Models\GameInfos;
 use App\Models\Gametype;
+use App\Models\LoginFail;
 use App\Models\Operate;
 use App\Models\RiskBet;
 use Illuminate\Support\Facades\Auth;
@@ -37,14 +38,22 @@ class GameManagement extends Component
     public $game3odds; //賠率
     public $game3single_term; //單期限額
     public $game3single_bet_limit; //單注限額
-    protected $listeners = ['changeSubmit'=>'changeSubmit'];
-
+    protected $listeners = ['changeSubmit'=>'changeSubmit', 'watchFail' => 'watchFail'];
+    
     public function mount(){
         $this->gameTypes = Gametype::all();
         $gameInfos = GameInfos::where('gamenumber', '23')->first();
         $this->game3odds = $gameInfos->odds;
         $this->game3single_term = $gameInfos->single_term;
         $this->game3single_bet_limit = $gameInfos->single_bet_limit;
+    }
+    public function watchFail(){
+        $failed = LoginFail::find(1);
+        if($failed->failed >= 3){
+            $this->dispatchBrowserEvent('showWarning');
+        }else{
+            $this->dispatchBrowserEvent('closeWarning');
+        }
     }
     public function changeGameType(){
         if($this->selectGameType != "-1" ){

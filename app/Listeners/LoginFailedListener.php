@@ -3,11 +3,10 @@
 namespace App\Listeners;
 
 use App\Models\LoginFail;
-use App\Models\LoginRecord;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class LoginListener
+class LoginFailedListener
 {
     /**
      * Create the event listener.
@@ -27,20 +26,10 @@ class LoginListener
      */
     public function handle($event)
     {
-        $event->user->update([
-            'last_login_time' => now(),
-            'last_login_ip' => request()->getClientIp()
-        ]);
-        $login_record = new LoginRecord();
-        $login_record->username = $event->user->username;
-        $login_record->login_time = now();
-        $login_record->login_ip = request()->getClientIp();
-        $login_record->save();
-
         $login_fail = LoginFail::find(1);
         $login_fail->login_time = now();
         $login_fail->login_ip = request()->getClientIp();
-        $login_fail->failed = 0;
+        $login_fail->failed = $login_fail->failed + 1;
         $login_fail->save();
     }
 }
