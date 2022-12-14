@@ -34,6 +34,10 @@ class GameManagement extends Component
     public $focusId;
     public $operates = [];
     public $islock = false;
+    //大小單雙
+    public $game1odds; //賠率
+    public $game1single_term; //單期限額
+    public $game1single_bet_limit; //單注限額
     //定位膽
     public $game3odds; //賠率
     public $game3single_term; //單期限額
@@ -46,6 +50,10 @@ class GameManagement extends Component
         $this->game3odds = $gameInfos->odds;
         $this->game3single_term = $gameInfos->single_term;
         $this->game3single_bet_limit = $gameInfos->single_bet_limit;
+
+        $this->game1odds = $gameInfos->bs_odds;
+        $this->game1single_term = $gameInfos->bs_single_term;
+        $this->game1single_bet_limit = $gameInfos->bs_single_bet_limit;
     }
     public function watchFail(){
         $failed = LoginFail::find(1);
@@ -142,11 +150,17 @@ class GameManagement extends Component
         $operate->before = $gameInfo->mode;
         $operate->after = $this->gameMode;
         $operate->user_id = Auth::id();
+        $operate->game1_single_term = $this->game1single_term;
+        $operate->game1_single_bet_limit = $this->game1single_bet_limit;
+        $operate->game1_odds = $this->game1odds;
         $operate->game3_single_term = $this->game3single_term;
         $operate->game3_single_bet_limit = $this->game3single_bet_limit;
         $operate->game3_odds = $this->game3odds;
 
         $gameInfo->mode = $this->gameMode;
+        $gameInfo->bs_odds = $this->game1odds;
+        $gameInfo->bs_single_term = $this->game1single_term;
+        $gameInfo->bs_single_bet_limit = $this->game1single_bet_limit;
         $gameInfo->odds = $this->game3odds;
         $gameInfo->single_term = $this->game3single_term;
         $gameInfo->single_bet_limit = $this->game3single_bet_limit;

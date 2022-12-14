@@ -63,15 +63,15 @@
                     <td class="table-content table-content-flex">
                         <div class="gameitem">
                             <div class="gamename">
-                                大小
+                                大小單雙
                             </div>
                             <div class="number">
-                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" value="1.96">
+                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" wire:model="game1odds">
                             </div>
                         </div>
                         <div class="gameitem">
                             <div class="gamename">
-                                單雙
+                                冠亞和
                             </div>
                             <div class="number">
                                 <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" value="1.96">
@@ -108,15 +108,15 @@
                     <td class="table-content table-content-flex">
                         <div class="gameitem">
                             <div class="gamename">
-                                大小
+                                大小單雙
                             </div>
                             <div class="number">
-                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" value="100000">
+                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" wire:model='game1single_term'>
                             </div>
                         </div>
                         <div class="gameitem">
                             <div class="gamename">
-                                單雙
+                                冠亞和
                             </div>
                             <div class="number">
                                 <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" value="100000">
@@ -153,15 +153,15 @@
                     <td class="table-content table-content-flex">
                         <div class="gameitem">
                             <div class="gamename">
-                                大小
+                                大小單雙
                             </div>
                             <div class="number">
-                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" value="100000">
+                                <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" wire:model='game1single_bet_limit'>
                             </div>
                         </div>
                         <div class="gameitem">
                             <div class="gamename">
-                                單雙
+                                冠亞和
                             </div>
                             <div class="number">
                                 <input type="number" @if(!$islock) disabled @endif class="@if($islock) open @endif" value="100000">
