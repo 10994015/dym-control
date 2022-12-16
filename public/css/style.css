@@ -1119,6 +1119,28 @@ main {
   width: 95%;
   margin: 30px auto;
 }
+.statisticalData .content > table {
+  width: 100%;
+  margin: 12px auto;
+  border: 3px #fff solid;
+}
+.statisticalData .content > table > thead > tr th {
+  background-color: #E3E3E3;
+  border: 3px #fff solid;
+  text-align: center;
+  font-size: 13px;
+  padding: 10px 0;
+}
+.statisticalData .content > table > tbody {
+  border-bottom: 1px #999 solid;
+}
+.statisticalData .content > table > tbody > tr td {
+  border: 3px #fff solid;
+  border-bottom: 1px #ccc solid;
+  text-align: center;
+  font-size: 13px;
+  padding: 10px 0;
+}
 .statisticalData .content > .list {
   display: flex;
   padding: 10px 0;
@@ -1186,6 +1208,149 @@ main {
   font-size: 12px;
   height: 35px;
   padding: 0 8px;
+}
+.statisticalData .content .table > :not(:last-child) > :last-child > * {
+  border-bottom-color: #fff;
+  border-bottom: 1px #ccc solid;
+}
+
+.viewbill {
+  width: 100%;
+}
+.viewbill > .title {
+  width: 95%;
+  border-top: 2px #8295C3 solid;
+  border-bottom: 2px #8295C3 solid;
+  padding: 8px 0;
+  font-size: 32px;
+  text-align: center;
+  margin: 12px auto;
+  font-weight: 500;
+}
+.viewbill > .bill-list {
+  display: flex;
+  width: 95%;
+  margin: 12px auto;
+}
+.viewbill > .bill-list > .bill {
+  width: 25%;
+  height: 100px;
+  border: 2px #2ABAFF solid;
+  margin: 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+.viewbill > .bill-list > .bill:hover {
+  box-shadow: 0px 0px 5px #ccc;
+}
+.viewbill > .bill-list > .bill p {
+  font-size: 15px;
+  font-weight: 800;
+}
+.viewbill > .ivu-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px #dcdee2 solid;
+  border-radius: 8px;
+  width: 95%;
+  margin: 20px auto;
+  padding: 16px;
+  transition: 0.3s;
+}
+.viewbill > .ivu-body:hover {
+  box-shadow: 0px 3px 5px #dcdee2;
+}
+.viewbill > .ivu-body > .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.viewbill > .ivu-body > .left > div {
+  margin: 0 10px;
+}
+.viewbill > .ivu-body > .left > div p {
+  text-align: center;
+  font-size: 13px;
+  color: #333;
+  margin-bottom: 3px;
+}
+.viewbill > .ivu-body > .left > div p.loading {
+  width: 148px;
+  text-align: center;
+  line-height: 32px;
+  height: 32px;
+  background-color: #29BAFF;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.viewbill > .ivu-body > .left > div input {
+  background-color: #fff;
+  color: #000;
+  width: 150px;
+  height: 32px;
+  border-radius: 5px;
+  border: 1px #ccc solid;
+  font-size: 12px;
+  line-height: 32px;
+  text-align: center;
+  padding: 0 8px;
+}
+.viewbill > .ivu-body > .right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.viewbill > .ivu-body > .right > button {
+  border-radius: 25px;
+  color: #c5c8ce;
+  width: 128px;
+  cursor: not-allowed;
+  background-color: #dcdee2;
+  height: 40px;
+  outline: 0;
+  font-size: 12px;
+  margin: 0 10px;
+}
+.viewbill > .ivu-body > .right > button.open {
+  background-color: #2ABAFF;
+  color: #fff;
+  cursor: pointer;
+}
+.viewbill > .ivu-body > .right > button.open.unlock {
+  background-color: #4C67A8;
+}
+.viewbill > .ivu-body > .right > button.close {
+  cursor: not-allowed;
+  background-color: #dcdee2;
+}
+.viewbill > table {
+  width: 95%;
+  margin: 12px auto;
+  border: 3px #fff solid;
+}
+.viewbill > table > thead > tr th {
+  background-color: #E3E3E3;
+  border: 3px #fff solid;
+  text-align: center;
+  font-size: 13px;
+  padding: 10px 0;
+}
+.viewbill > table > tbody > tr td {
+  border: 3px #fff solid;
+  border-bottom: 1px #ccc solid;
+  text-align: center;
+  font-size: 13px;
+  padding: 10px 0;
+}
+.viewbill .table > :not(:last-child) > :last-child > * {
+  border-bottom-color: #fff;
+  border-bottom: 1px #ccc solid;
 }
 
 #loginPage {

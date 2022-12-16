@@ -8,6 +8,7 @@ use App\Http\Livewire\MemberWallet;
 use App\Http\Livewire\MemberWalletVerify;
 use App\Http\Livewire\StatisticalData;
 use App\Http\Livewire\UserStatus;
+use App\Http\Livewire\Viewbill;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,7 @@ Route::get('/answer', Answer::class)->middleware('auth');
 Route::post('/member_wallet', MemberWallet::class)->middleware('auth');
 Route::get('/member_wallet_verify', MemberWalletVerify::class)->middleware('auth');
 Route::get('/statistical_data ', StatisticalData::class)->middleware('auth');
+Route::get('/view_bill ', Viewbill::class)->middleware('auth');
 
 Route::middleware([
     'auth:sanctum',

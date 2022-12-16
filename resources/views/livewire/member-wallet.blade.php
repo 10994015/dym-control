@@ -1,5 +1,5 @@
 <div class="memberWallet">
-    <div class="title">會員錢包 {{$ip}}, {{$clientIp}} </div>
+    <div class="title">會員錢包 {{$clientIp}} </div>
     <div class="content">
         <div class="searchBox">
             <input type="text" placeholder="請輸入使用者帳號或手機..." class="form-control" wire:model='searchText' >

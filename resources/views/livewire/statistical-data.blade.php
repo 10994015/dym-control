@@ -16,37 +16,44 @@
             </div>
         </div>
         <div class="right" >
-            <button class="search open" id="" >下載報表</button>
+            <button class="search open" id="downloadExcel" >下載報表</button>
         </div>
     </div>
     <div class="content">
-        <div class="list list-title">
-            <div class="item"><p>會員帳號</p></div>
-            <div class="item"><p>下注金額</p></div>
-            <div class="item"><p>總碼量</p></div>
-            <div class="item"><p>總輸贏</p></div>
-            <div class="item"><p>對戰抽水總額</p></div>
-            <div class="item"><p>下注時間</p></div>
-        </div>
-        @if ($total_bet <=0 )
-            <div class="list ondata">
-                <p>暫無數據</p>
-            </div>
-        @else
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">會員帳號</th>
+                <th scope="col">下注金額</th>
+                <th scope="col">總碼量</th>
+                <th scope="col">總輸贏</th>
+                <th scope="col">對戰抽水總額</th>
+                <th scope="col">下注時間</th>
+              </tr>
+            </thead>
+            <tbody>
             @foreach ($betList as $bet)
-                <div class="list">
-                    <div class="item"> {{$bet->user->username}} </div>
-                    <div class="item"> {{$bet->money}} </div>
-                    <div class="item"></div>
-                    <div class="item"> {{$bet->result}} </div>
-                    <div class="item">0</div>
-                    <div class="item"> {{$bet->created_at}} </div>
-                </div>
+            <tr>
+                <td>{{$bet->user->username}}</th>
+                <td>{{$bet->money}}</td>
+                <td>{{$bet->chips}}</td>
+                <td>{{$bet->result}}</td>
+                <td>0</td>
+                <td>{{$bet->created_at}}</td>
+              </tr>
             @endforeach
-        @endif
-       
-       
-       
-
+              
+            </tbody>
+          </table>
     </div>
+
+    <script>
+        const downloadExcel = document.getElementById('downloadExcel');
+       
+        downloadExcel.addEventListener('click',()=>{
+            var table2excel = new Table2Excel();
+            table2excel.export(document.querySelectorAll("table"));
+        })
+        
+        </script>
 </div>
