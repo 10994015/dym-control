@@ -18,7 +18,6 @@ class StatisticalData extends Component
     }
     
     public function searchTime(){
-        log::info('hi');
         $this->betList = BetList::whereBetween('created_at', [$this->startTime,   $this->endTime])->get();
         $this->total_bet = BetList::whereBetween('created_at', [$this->startTime,   $this->endTime])->count();
     }
